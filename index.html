@@ -1,35 +1,150 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <title>InventariostaApp</title>
+  <meta charset="UTF-8">
+  <title>InventariosTA</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f4f6f8;
+      color: #2c3e50;
+      line-height: 1.7;
+    }
+
+    header {
+      background-color: #1a73e8;
+      color: white;
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background-color: white;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    }
+
+    .section {
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      font-size: 24px;
+      color: #1a1a1a;
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin-bottom: 12px;
+    }
+
+    ul {
+      margin-left: 20px;
+      padding-left: 0;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+    }
+
+    .btn-container {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .btn {
+      background-color: #1a73e8;
+      color: white;
+      padding: 14px 28px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn:hover {
+      background-color: #125bb3;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 28px;
+      }
+
+      .container {
+        padding: 20px;
+      }
+
+      h2 {
+        font-size: 20px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>Bienvenido a InventariostaApp</h1>
-  <BR>
-  <h1>InventariostaApp es una aplicación móvil diseñada para la gestión eficiente de inventarios en pequeños <BR>
-    y medianos negocios. Permite a los usuarios registrar productos, realizar conteos, gestionar entradas y <BR>
-    salidas, y generar reportes de stock en tiempo real. La app facilita la sincronización de datos con Google<BR>
-    Drive, permitiendo respaldos automáticos y restauración de información desde la nube.Características principales:<BR>
 
-    Registro y control de productos y categorías.<BR>
+  <header>
+    <h1>Bienvenido a InventariosTA</h1>
+    <p>La app para controlar eficientemente tu inventario</p>
+  </header>
 
-    Gestión de movimientos de inventario (entradas, salidas, ajustes).<BR>
+  <div class="container">
+    <div class="section">
+      <h2>¿Qué es InventariosTA?</h2>
+      <p>
+        InventariosTA es una aplicación móvil diseñada para la gestión eficiente de inventarios en pequeños y medianos negocios.
+        Permite registrar productos, realizar conteos, gestionar entradas y salidas, y generar reportes en tiempo real.
+        La App sincroniza automáticamente tus datos con Google Drive para respaldos y restauraciones seguras.
+      </p>
+    </div>
 
-    Sincronización y respaldo de datos en Google Drive.<BR>
+    <div class="section">
+      <h2>Características principales</h2>
+      <ul>
+        <li>Registro y control de productos y categorías.</li>
+        <li>Gestión de movimientos de inventario (entradas, salidas, ajustes).</li>
+        <li>Sincronización y respaldo de datos en Google Drive.</li>
+        <li>Reportes y estadísticas detalladas del inventario.</li>
+        <li>Interfaz intuitiva y fácil de usar.</li>
+      </ul>
+    </div>
 
-    Reportes y estadísticas de inventario.<BR>
+    <div class="section">
+      <h2>¿Por qué solicitamos acceso a tu cuenta de Google?</h2>
+      <p>
+        La app utiliza Google Sign-In para autenticar a los usuarios y acceder a Google Drive para almacenar y restaurar
+        respaldos de inventario de forma segura y privada.
+      </p>
+      <p>
+        <strong>No compartimos tu información con terceros</strong>. Solo accedemos a los datos necesarios para el correcto funcionamiento de la app.
+      </p>
+    </div>
 
-    Interfaz intuitiva y fácil de usar.<BR>
-
-¿Por qué solicitamos acceso a tu cuenta de Google?La app utiliza Google Sign-In para autenticar a los usuarios y<BR>
-    Google Drive para almacenar y restaurar respaldos de inventario de forma segura y privada. No compartimos tu<BR>
-    información con terceros y solo accedemos a los datos necesarios para el funcionamiento de la app.  </h1>  <BR>  <BR>  <BR>  <BR>
-
-  
-<a href="https://technoalex1.github.io/inventariosta1/politicas%20y%20privacidad.html">
-  <button>Politicas y privacidad, clic aca para ver</button>
-</a>
-
+    <div class="btn-container">
+      <a class="btn" href="https://technoalex1.github.io/inventariosta1/politicas%20y%20privacidad.html">
+        Ver Políticas y Privacidad
+      </a>
+    </div>
+  </div>
 
 </body>
 </html>
