@@ -22,7 +22,7 @@ header{
 header h1{font-size:36px;font-weight:700}
 header p{opacity:.9}
 
-/* === LANGUAGE BAR === */
+/* Language bar */
 .language-bar{
   background:#ffffff;
   border-bottom:1px solid #e0e0e0;
@@ -31,7 +31,6 @@ header p{opacity:.9}
   flex-wrap:wrap;
   justify-content:center;
   gap:10px;
-  font-size:14px;
 }
 .lang-btn{
   cursor:pointer;
@@ -40,13 +39,13 @@ header p{opacity:.9}
   border:1px solid #ddd;
   background:#f9f9f9;
   transition:.2s;
+  font-size:14px;
 }
 .lang-btn:hover{
   background:#e8f0fe;
   border-color:#1a73e8;
 }
 
-/* MAIN CONTENT */
 .container{
   max-width:1000px;
   margin:40px auto;
@@ -61,17 +60,16 @@ p{margin-bottom:12px}
 ul,ol{margin-left:22px;margin-bottom:14px}
 li{margin-bottom:6px}
 
-/* === HIDE GOOGLE BRANDING === */
+/* Hide Google branding */
 .goog-logo-link,
 .goog-te-gadget span,
 .goog-te-banner-frame,
-.goog-te-gadget-simple img {
+.goog-te-gadget-simple img{
   display:none!important;
 }
 body{top:0!important}
 #google_translate_element{display:none}
 
-/* Responsive */
 @media(max-width:600px){
   header h1{font-size:28px}
   .container{padding:20px}
@@ -86,7 +84,6 @@ body{top:0!important}
   <p>User Guide & Frequently Asked Questions</p>
 </header>
 
-<!-- LANGUAGE SELECTOR -->
 <div class="language-bar">
   <span class="lang-btn" onclick="setLang('en')">🇺🇸 English</span>
   <span class="lang-btn" onclick="setLang('es')">🇪🇸 Español</span>
@@ -104,30 +101,124 @@ body{top:0!important}
 
 <div class="section">
 <h2>Funcionalidad General</h2>
+
 <p><strong>P:</strong> ¿Para qué sirve esta aplicación?</p>
 <p><strong>R:</strong> Es un sistema completo de gestión para tu negocio. Te permite llevar un control detallado de inventario, productos, ventas, compras, servicios, clientes, proveedores e incluso procesos de manufactura.</p>
 
 <p><strong>P:</strong> ¿Qué tipo de información puedo gestionar?</p>
 <p><strong>R:</strong> Puedes administrar:</p>
+
 <ul>
-<li><strong>Productos:</strong> Control de stock, precios, categorías.</li>
-<li><strong>Ventas y Compras:</strong> Registra todas las transacciones.</li>
-<li><strong>Clientes y Proveedores:</strong> Mantén una base de datos de tus contactos comerciales.</li>
-<li><strong>Servicios:</strong> Si tu negocio ofrece servicios, también puedes gestionarlos.</li>
-<li><strong>Manufacturas:</strong> Controla la creación de productos a partir de materia prima.</li>
-<li><strong>Finanzas:</strong> Registra ingresos, gastos y genera cupones.</li>
-<li><strong>Reportes:</strong> Genera informes detallados de tus operaciones.</li>
+<li>Productos: Control de stock, precios, categorías.</li>
+<li>Ventas y Compras: Registra todas las transacciones.</li>
+<li>Clientes y Proveedores: Mantén una base de datos de tus contactos comerciales.</li>
+<li>Servicios: Si tu negocio ofrece servicios, también puedes gestionarlos.</li>
+<li>Manufacturas: Controla la creación de productos a partir de materia prima.</li>
+<li>Finanzas: Registra ingresos, gastos y genera cupones.</li>
+<li>Reportes: Genera informes detallados de tus operaciones.</li>
 </ul>
 </div>
 
-<!-- (EL RESTO DEL TEXTO SIGUE EXACTAMENTE IGUAL, SIN CAMBIOS) -->
+<div class="section">
+<h2>Gestión de Múltiples Negocios</h2>
+
+<p><strong>P:</strong> ¿Puedo administrar más de un negocio con la aplicación?</p>
+<p><strong>R:</strong> Sí. La aplicación está diseñada para que puedas registrar múltiples perfiles de negocio y activar uno a la vez para trabajar en él.</p>
+
+<p><strong>P:</strong> ¿Cómo cambio entre mis negocios?</p>
+<p><strong>R:</strong> En la configuración de la aplicación, encontrarás una sección para gestionar tus negocios. Allí puedes seleccionar cuál de ellos quieres que sea el "activo".</p>
+
+<p><strong>P:</strong> ¡Cambié de negocio y toda mi información desapareció! ¿Qué pasó?</p>
+<p><strong>R:</strong> No te preocupes, tu información no se ha borrado. Cada dato que registras (un producto, una venta, un cliente) está asociado al negocio que tenías activo en ese momento. Si cambias a otro perfil de negocio, solo verás la información correspondiente a ese negocio. Para ver tus datos anteriores, simplemente vuelve a activar el negocio original.</p>
+</div>
 
 <div class="section">
-<h2>Flujos de Acciones Comunes</h2>
-<p>La aplicación sigue un patrón consistente. El flujo para agregar ventas, compras, clientes o proveedores es muy similar al de los productos:</p>
+<h2>Sincronización y Respaldo de Datos (Google Drive)</h2>
+
+<p><strong>P:</strong> ¿Cómo puedo respaldar mi información para no perderla?</p>
+<p><strong>R:</strong> La aplicación utiliza tu cuenta de Google Drive para respaldar y sincronizar tus datos de forma segura.</p>
+
+<p><strong>P:</strong> ¿Cómo activo la sincronización con Google Drive?</p>
+<p><strong>R:</strong> Debes ir al menú de Configuración dentro de la app, buscar la opción de sincronización con Google Drive, activarla y seleccionar la cuenta de Google con la que deseas sincronizar.</p>
+
+<p><strong>P:</strong> ¿La sincronización es automática?</p>
+<p><strong>R:</strong> Sí, en la configuración puedes activar la opción "Auto-Sync" para que la aplicación mantenga tus datos respaldados y sincronizados en la nube automáticamente. También puedes realizar una sincronización manual cuando lo necesites.</p>
+
+<p><strong>P:</strong> ¿Puedo usar la app en varios dispositivos a la vez?</p>
+<p><strong>R:</strong> Sí. La función de sincronización está diseñada para que puedas trabajar con la misma información en diferentes dispositivos. La app identifica cada registro con un ID único para evitar conflictos y duplicados.</p>
+</div>
+
+<div class="section">
+<h2>Solución de Problemas Comunes</h2>
+
+<p><strong>P:</strong> ¡Actualicé la aplicación y todos mis datos se borraron! ¿Por qué?</p>
+<p><strong>R:</strong> Esta es una situación crítica. La aplicación tiene un mecanismo de seguridad que, en caso de un error grave al actualizar la estructura de la base de datos local, puede borrar los datos locales para evitar que la app se bloquee o corrompa la información. Inmediatamente después, intentará restaurar el último respaldo guardado en Google Drive.</p>
+
+<p><strong>Recomendación vital:</strong> Para evitar la pérdida de datos, asegúrate de tener la sincronización con Google Drive siempre activa.</p>
+
+<p><strong>P:</strong> La sincronización no funciona o da un error. ¿Qué puedo hacer?</p>
+<p><strong>R:</strong> Revisa los siguientes puntos:</p>
+
 <ol>
-<li>Navega a la sección correspondiente desde el menú lateral.</li>
-<li>Busca y presiona el botón para agregar un nuevo elemento.</li>
+<li>Asegúrate de tener una conexión a internet estable.</li>
+<li>Ve a la configuración y verifica que la cuenta de Google Drive seleccionada sea la correcta y que la app tenga los permisos necesarios.</li>
+<li>Intenta realizar una sincronización manual desde el botón correspondiente.</li>
+</ol>
+</div>
+
+<div class="section">
+<h2>Guías de Usuario (Paso a Paso)</h2>
+
+<p><strong>¿Cómo agregar un nuevo producto?</strong></p>
+<ol>
+<li>En el menú lateral, selecciona "Inventario".</li>
+<li>Presiona el botón flotante con el símbolo + que aparece en la esquina inferior derecha.</li>
+<li>Se abrirá el formulario "Crear Producto". Rellena toda la información solicitada (nombre, precio, cantidad, categoría, etc.).</li>
+<li>Guarda el producto.</li>
+</ol>
+
+<p><strong>¿Cómo editar un producto existente?</strong></p>
+<ol>
+<li>Ve a la sección de "Inventario".</li>
+<li>Busca en la lista el producto que deseas modificar y pulsa sobre él.</li>
+<li>Se abrirá el mismo formulario de producto, pero con la información ya cargada.</li>
+<li>Realiza los cambios que necesites y guarda.</li>
+</ol>
+
+<p><strong>¿Cómo cambiar entre mis diferentes negocios?</strong></p>
+<ol>
+<li>Abre el menú de navegación lateral (deslizando desde la izquierda o pulsando el ícono de menú).</li>
+<li>En la parte superior del menú, pulsa sobre el nombre del negocio que está actualmente activo.</li>
+<li>Aparecerá un diálogo con la lista de todos tus negocios registrados.</li>
+<li>Selecciona el negocio al que deseas cambiar.</li>
+</ol>
+
+<p><strong>¿Cómo generar un reporte?</strong></p>
+<ol>
+<li>Abre el menú lateral y selecciona "Reportes".</li>
+<li>Verás una lista con todos los reportes disponibles.</li>
+<li>Pulsa sobre el reporte que deseas generar.</li>
+</ol>
+
+<p><strong>¿Cómo configurar la sincronización con Google Drive?</strong></p>
+<ol>
+<li>Abre el menú lateral y ve a "Sincronización" (también puede estar dentro de "Configuración").</li>
+<li>En esta pantalla, activa la casilla para habilitar la sincronización con Google Drive.</li>
+<li>Selecciona la cuenta de Google que quieres usar para los respaldos.</li>
+<li>Puedes activar la opción de "Sincronización Automática".</li>
+</ol>
+</div>
+
+<div class="section">
+<h2>Flujos de Acciones Comunes (Ventas, Compras, Clientes)</h2>
+
+<p>La aplicación sigue un patrón consistente. El flujo para agregar ventas, compras, clientes o proveedores es muy similar al de los productos:</p>
+
+<p><strong>Para agregar una Venta, Compra, Cliente o Proveedor (flujo probable):</strong></p>
+
+<ol>
+<li>Navega a la sección correspondiente desde el menú lateral (ej. "Ventas", "Clientes").</li>
+<li>Busca y presiona el botón para agregar un nuevo elemento (normalmente un botón flotante con +).</li>
 <li>Rellena el formulario que aparecerá en pantalla.</li>
 <li>Guarda los cambios.</li>
 </ol>
@@ -135,11 +226,10 @@ body{top:0!important}
 
 </div>
 
-<!-- GOOGLE TRANSLATE (HIDDEN) -->
 <div id="google_translate_element"></div>
 
 <script>
-function googleTranslateElementInit() {
+function googleTranslateElementInit(){
   new google.translate.TranslateElement({
     pageLanguage:'es',
     includedLanguages:'en,es,zh-CN,hi,pt,fr,de,it,ja,ko',
@@ -148,16 +238,14 @@ function googleTranslateElementInit() {
 }
 
 function setLang(lang){
-  const select = document.querySelector(".goog-te-combo");
+  const select=document.querySelector('.goog-te-combo');
   if(select){
-    select.value = lang;
-    select.dispatchEvent(new Event("change"));
+    select.value=lang;
+    select.dispatchEvent(new Event('change'));
   }
 }
 
-window.onload = function(){
-  setTimeout(()=>setLang('en'),1200);
-}
+window.onload=()=>setTimeout(()=>setLang('en'),1200);
 </script>
 
 <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
