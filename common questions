@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>InventariosTA - Guía de Usuario</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:'Inter',sans-serif;
+  background:#f4f6f8;
+  color:#2c3e50;
+  line-height:1.7;
+}
+header{
+  background:#1a73e8;
+  color:#fff;
+  padding:40px 20px;
+  text-align:center;
+}
+header h1{font-size:34px;margin-bottom:10px}
+.container{
+  max-width:1000px;
+  margin:30px auto;
+  background:#fff;
+  padding:40px;
+  border-radius:16px;
+  box-shadow:0 10px 25px rgba(0,0,0,.05);
+}
+.section{margin-bottom:40px}
+h2{font-size:24px;margin-bottom:12px;color:#1a1a1a}
+h3{font-size:18px;margin:18px 0 8px}
+ul{margin-left:20px}
+li{margin-bottom:6px}
+.lang-switch{
+  text-align:right;
+  margin-bottom:20px;
+}
+select{
+  padding:8px 12px;
+  border-radius:8px;
+  border:1px solid #ccc;
+  font-size:14px;
+}
+@media(max-width:600px){
+  .container{padding:20px}
+  header h1{font-size:26px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>InventariosTA</h1>
+  <p id="subtitle">Guía de Usuario y Preguntas Frecuentes</p>
+</header>
+
+<div class="container">
+
+  <div class="lang-switch">
+    <select onchange="setLang(this.value)">
+      <option value="es">Español</option>
+      <option value="en">English</option>
+      <option value="zh">中文</option>
+      <option value="hi">हिन्दी</option>
+      <option value="pt">Português</option>
+      <option value="fr">Français</option>
+      <option value="de">Deutsch</option>
+      <option value="it">Italiano</option>
+      <option value="ja">日本語</option>
+      <option value
