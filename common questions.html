@@ -27,16 +27,16 @@ header h1{
 .translate-bar{
   background:#e8f0fe;
   border-bottom:1px solid #d0ddf7;
-  padding:14px 20px;
+  padding:16px 20px;
   text-align:center;
-  font-size:15px;
+  font-size:16px;
   font-weight:600;
 }
 .translate-bar select{
-  margin-left:8px;
-  padding:6px 10px;
-  border-radius:6px;
-  border:1px solid #bbb;
+  margin-left:10px;
+  padding:6px 12px;
+  border-radius:8px;
+  border:1px solid #aaa;
   font-size:14px;
   cursor:pointer;
 }
@@ -48,24 +48,26 @@ header h1{
   border-radius:16px;
   box-shadow:0 10px 25px rgba(0,0,0,0.05);
 }
-.section{
-  margin-bottom:40px;
-}
+.section{margin-bottom:40px}
 h2{
   font-size:24px;
   color:#1a1a1a;
   margin-bottom:14px;
 }
-p{
-  margin-bottom:12px;
+p{margin-bottom:12px}
+ul,ol{margin-left:22px;margin-bottom:14px}
+li{margin-bottom:6px}
+
+/* === OCULTAR GOOGLE BRANDING === */
+.goog-logo-link,
+.goog-te-gadget span,
+.goog-te-banner-frame.skiptranslate,
+.goog-te-gadget-simple img {
+  display:none !important;
 }
-ul,ol{
-  margin-left:22px;
-  margin-bottom:14px;
-}
-li{
-  margin-bottom:6px;
-}
+body{top:0!important}
+
+/* Responsive */
 @media(max-width:600px){
   header h1{font-size:28px}
   .container{padding:20px}
@@ -232,7 +234,7 @@ window.onload = function () {
       select.value = "en";
       select.dispatchEvent(new Event("change"));
     }
-  }, 1500);
+  }, 1200);
 };
 </script>
 
