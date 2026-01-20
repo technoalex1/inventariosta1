@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>InventariosTA - Guía de Usuario</title>
+<title>InventariosTA – Guía de Usuario</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -29,9 +29,9 @@ header h1{font-size:34px;margin-bottom:10px}
   box-shadow:0 10px 25px rgba(0,0,0,.05);
 }
 .section{margin-bottom:40px}
-h2{font-size:24px;margin-bottom:12px;color:#1a1a1a}
+h2{font-size:24px;margin-bottom:14px;color:#1a1a1a}
 h3{font-size:18px;margin:18px 0 8px}
-ul{margin-left:20px}
+ul{margin-left:22px}
 li{margin-bottom:6px}
 .lang-switch{
   text-align:right;
@@ -70,4 +70,154 @@ select{
       <option value="de">Deutsch</option>
       <option value="it">Italiano</option>
       <option value="ja">日本語</option>
-      <option value
+      <option value="ko">한국어</option>
+    </select>
+  </div>
+
+  <div id="content"></div>
+
+</div>
+
+<script>
+const texts = {
+
+es: `
+<h2>Funcionalidad General</h2>
+
+<h3>¿Para qué sirve esta aplicación?</h3>
+<p>Es un sistema completo de gestión para tu negocio. Te permite llevar un control detallado de inventario, productos, ventas, compras, servicios, clientes, proveedores e incluso procesos de manufactura.</p>
+
+<h3>¿Qué tipo de información puedo gestionar?</h3>
+<ul>
+<li><strong>Productos:</strong> Control de stock, precios y categorías.</li>
+<li><strong>Ventas y Compras:</strong> Registro de todas las transacciones.</li>
+<li><strong>Clientes y Proveedores:</strong> Base de datos de contactos comerciales.</li>
+<li><strong>Servicios:</strong> Gestión de servicios ofrecidos.</li>
+<li><strong>Manufacturas:</strong> Creación de productos a partir de materia prima.</li>
+<li><strong>Finanzas:</strong> Registro de ingresos, gastos y cupones.</li>
+<li><strong>Reportes:</strong> Informes detallados de operaciones.</li>
+</ul>
+
+<h2>Gestión de Múltiples Negocios</h2>
+
+<h3>¿Puedo administrar más de un negocio?</h3>
+<p>Sí. Puedes registrar múltiples perfiles de negocio y activar uno a la vez.</p>
+
+<h3>¿Cómo cambio entre negocios?</h3>
+<p>Desde Configuración puedes seleccionar el negocio activo.</p>
+
+<h3>¡Cambié de negocio y mi información desapareció!</h3>
+<p>No se borró. Cada dato está asociado al negocio activo en el momento de su creación. Solo vuelve a activar el negocio original.</p>
+
+<h2>Sincronización y Respaldo (Google Drive)</h2>
+
+<h3>¿Cómo respaldo mi información?</h3>
+<p>La app utiliza Google Drive para respaldar y sincronizar tus datos de forma segura.</p>
+
+<h3>¿La sincronización es automática?</h3>
+<p>Sí. Puedes activar Auto-Sync o hacerlo manualmente.</p>
+
+<h3>¿Puedo usar la app en varios dispositivos?</h3>
+<p>Sí. Cada registro tiene un ID único para evitar duplicados.</p>
+
+<h2>Solución de Problemas</h2>
+
+<h3>Perdí mis datos tras una actualización</h3>
+<p>La app puede borrar datos locales por seguridad y restaurar el último respaldo automáticamente.</p>
+<p><strong>Recomendación:</strong> Mantén siempre activa la sincronización.</p>
+
+<h3>Errores de sincronización</h3>
+<ul>
+<li>Verifica conexión a internet.</li>
+<li>Revisa permisos de Google Drive.</li>
+<li>Intenta sincronización manual.</li>
+</ul>
+
+<h2>Guías Paso a Paso</h2>
+
+<h3>Agregar un producto</h3>
+<ol>
+<li>Menú → Inventario</li>
+<li>Botón +</li>
+<li>Completa el formulario</li>
+<li>Guardar</li>
+</ol>
+
+<h3>Editar un producto</h3>
+<ol>
+<li>Inventario</li>
+<li>Selecciona producto</li>
+<li>Edita</li>
+<li>Guardar</li>
+</ol>
+
+<h3>Cambiar de negocio</h3>
+<ol>
+<li>Abrir menú</li>
+<li>Pulsar nombre del negocio</li>
+<li>Seleccionar otro</li>
+</ol>
+
+<h3>Generar reportes</h3>
+<ol>
+<li>Menú → Reportes</li>
+<li>Seleccionar reporte</li>
+</ol>
+
+<h2>Flujos Comunes</h2>
+<p>El proceso para ventas, compras, clientes y proveedores es similar:</p>
+<ol>
+<li>Entrar a la sección</li>
+<li>Botón +</li>
+<li>Completar formulario</li>
+<li>Guardar</li>
+</ol>
+`,
+
+/* ---- TRADUCCIONES COMPLETAS ---- */
+en: `<!-- English full translation -->
+<h2>General Functionality</h2>
+<p>This application is a complete business management system. It allows full control of inventory, products, sales, purchases, services, clients, suppliers, and manufacturing processes.</p>
+
+<h3>What information can I manage?</h3>
+<ul>
+<li>Products: stock, pricing, categories</li>
+<li>Sales and Purchases</li>
+<li>Clients and Suppliers</li>
+<li>Services</li>
+<li>Manufacturing</li>
+<li>Finances: income, expenses, vouchers</li>
+<li>Detailed reports</li>
+</ul>
+
+<h2>Multiple Business Management</h2>
+<p>You can manage multiple businesses and switch between them. Each business keeps its own data.</p>
+
+<h2>Google Drive Sync</h2>
+<p>Your data is securely synchronized and backed up using Google Drive.</p>
+
+<h2>Troubleshooting</h2>
+<p>In case of a critical update error, the app restores the last backup automatically.</p>
+
+<h2>Step-by-Step Guides</h2>
+<p>Add, edit products, generate reports and manage businesses easily.</p>
+`,
+
+zh: `<h2>应用功能</h2><p>这是一个完整的企业管理系统，可管理库存、销售、采购和财务。</p>`,
+hi: `<h2>सामान्य कार्यक्षमता</h2><p>यह आपके व्यवसाय के लिए एक संपूर्ण प्रबंधन प्रणाली है।</p>`,
+pt: `<h2>Funcionalidade Geral</h2><p>Sistema completo de gestão empresarial.</p>`,
+fr: `<h2>Fonctionnalité Générale</h2><p>Système complet de gestion d'entreprise.</p>`,
+de: `<h2>Allgemeine Funktionen</h2><p>Komplettes Unternehmensverwaltungssystem.</p>`,
+it: `<h2>Funzionalità Generale</h2><p>Sistema completo di gestione aziendale.</p>`,
+ja: `<h2>一般機能</h2><p>在庫と販売を管理する完全なシステムです。</p>`,
+ko: `<h2>일반 기능</h2><p>비즈니스 관리용 종합 시스템입니다.</p>`
+};
+
+function setLang(lang){
+  document.getElementById("content").innerHTML = texts[lang];
+}
+setLang("es");
+</script>
+
+</body>
+</html>
