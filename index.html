@@ -1,161 +1,235 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>InventariosTA</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<meta charset="UTF-8">
+<title>InventariosTA</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #f4f6f8;
-      color: #2c3e50;
-      line-height: 1.7;
-    }
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
 
-    header {
-      background-color: #1a73e8;
-      color: white;
-      padding: 50px 20px;
-      text-align: center;
-    }
+body{
+  font-family:'Inter',sans-serif;
+  background:#f4f6f8;
+  color:#2c3e50;
+  line-height:1.7;
+}
 
-    header h1 {
-      font-size: 36px;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
+/* Top Menu */
+nav{
+  background:#ffffff;
+  border-bottom:1px solid #e0e0e0;
+  padding:12px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+}
 
-    .container {
-      max-width: 900px;
-      margin: 40px auto;
-      background-color: white;
-      padding: 40px;
-      border-radius: 16px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-    }
+nav .links a{
+  margin-right:16px;
+  text-decoration:none;
+  color:#1a73e8;
+  font-weight:600;
+}
 
-    .section {
-      margin-bottom: 30px;
-    }
+nav .links a:hover{
+  text-decoration:underline;
+}
 
-    h2 {
-      font-size: 24px;
-      color: #1a1a1a;
-      margin-bottom: 10px;
-    }
+/* Language bar */
+.language-bar{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
 
-    p {
-      margin-bottom: 12px;
-    }
+.lang-btn{
+  cursor:pointer;
+  padding:6px 10px;
+  border-radius:8px;
+  border:1px solid #ddd;
+  background:#f9f9f9;
+  font-size:14px;
+}
 
-    ul {
-      margin-left: 20px;
-      padding-left: 0;
-    }
+.lang-btn:hover{
+  background:#e8f0fe;
+  border-color:#1a73e8;
+}
 
-    ul li {
-      margin-bottom: 8px;
-    }
+/* Header */
+header{
+  background:#1a73e8;
+  color:white;
+  padding:50px 20px;
+  text-align:center;
+}
 
-    .btn-container {
-      text-align: center;
-      margin-top: 40px;
-    }
+header h1{
+  font-size:36px;
+  font-weight:700;
+  margin-bottom:10px;
+}
 
-    .btn {
-      background-color: #1a73e8;
-      color: white;
-      padding: 14px 28px;
-      border: none;
-      border-radius: 8px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      text-decoration: none;
-      display: inline-block;
-    }
+/* Content */
+.container{
+  max-width:900px;
+  margin:40px auto;
+  background:white;
+  padding:40px;
+  border-radius:16px;
+  box-shadow:0 10px 25px rgba(0,0,0,.05);
+}
 
-    .btn:hover {
-      background-color: #125bb3;
-    }
+.section{margin-bottom:30px}
 
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 28px;
-      }
+h2{
+  font-size:24px;
+  margin-bottom:10px;
+  color:#1a1a1a;
+}
 
-      .container {
-        padding: 20px;
-      }
+ul{margin-left:20px}
+ul li{margin-bottom:8px}
 
-      h2 {
-        font-size: 20px;
-      }
-    }
-  </style>
+/* Buttons */
+.btn-container{
+  text-align:center;
+  margin-top:40px;
+}
+
+.btn{
+  background:#1a73e8;
+  color:white;
+  padding:14px 28px;
+  border-radius:8px;
+  font-size:16px;
+  text-decoration:none;
+  display:inline-block;
+  margin:10px;
+}
+
+.btn:hover{background:#125bb3}
+
+/* Hide Google branding */
+.goog-logo-link,
+.goog-te-gadget span,
+.goog-te-banner-frame,
+.goog-te-gadget-simple img{
+  display:none!important;
+}
+body{top:0!important}
+#google_translate_element{display:none}
+
+@media(max-width:600px){
+  header h1{font-size:28px}
+  .container{padding:20px}
+}
+</style>
 </head>
+
 <body>
 
-  <header>
-    <h1>Bienvenido a InventariosTA</h1>
-    <p>La app para controlar eficientemente tu inventario</p>
-  </header>
-
-  <div class="container">
-    <div class="section">
-      <h2>¿Qué es InventariosTA?</h2>
-      <p>
-        InventariosTA es una aplicación móvil diseñada para la gestión eficiente de inventarios en pequeños y medianos negocios.
-        Permite registrar productos, realizar conteos, gestionar entradas y salidas, y generar reportes en tiempo real.
-        La App sincroniza automáticamente tus datos con Google Drive para respaldos y restauraciones seguras.
-      </p>
-    </div>
-
-    <div class="section">
-      <h2>Características principales</h2>
-      <ul>
-        <li>Registro y control de productos y categorías.</li>
-        <li>Gestión de movimientos de inventario (entradas, salidas, ajustes).</li>
-        <li>Sincronización y respaldo de datos en Google Drive.</li>
-        <li>Reportes y estadísticas detalladas del inventario.</li>
-        <li>Interfaz intuitiva y fácil de usar.</li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h2>¿Por qué solicitamos acceso a tu cuenta de Google?</h2>
-      <p>
-        La app utiliza Google Sign-In para autenticar a los usuarios y acceder a Google Drive para almacenar y restaurar
-        respaldos de inventario de forma segura y privada.
-      </p>
-      <p>
-        <strong>No compartimos tu información con terceros</strong>. Solo accedemos a los datos necesarios para el correcto funcionamiento de la app.
-      </p>
-    </div>
-
-    <div class="btn-container">
-      <a class="btn" href="https://technoalex1.github.io/inventariosta1/politicas%20y%20privacidad.html">
-        Ver Políticas y Privacidad
-      </a>
-<BR>
-      <BR>
-      <BR>
-      <a class="btn" href="https://www.facebook.com/TechnoAlexx/" target="_blank">
-    Visítanos en Facebook
-  </a>
-
-      
-    </div>
+<nav>
+  <div class="links">
+    <a href="https://technoalex1.github.io/inventariosta1/common questions.html">Common Questions</a>
+    <a href="https://technoalex1.github.io/inventariosta1/privacy policies.html">Privacy Policies</a>
+    <a href="https://technoalex1.github.io/inventariosta1/terms and conditions.html">Terms & Conditions</a>
   </div>
 
+  <div class="language-bar">
+    <span class="lang-btn" onclick="setLang('en')">🇺🇸</span>
+    <span class="lang-btn" onclick="setLang('es')">🇪🇸</span>
+    <span class="lang-btn" onclick="setLang('zh-CN')">🇨🇳</span>
+    <span class="lang-btn" onclick="setLang('hi')">🇮🇳</span>
+    <span class="lang-btn" onclick="setLang('pt')">🇧🇷</span>
+    <span class="lang-btn" onclick="setLang('fr')">🇫🇷</span>
+    <span class="lang-btn" onclick="setLang('de')">🇩🇪</span>
+    <span class="lang-btn" onclick="setLang('it')">🇮🇹</span>
+    <span class="lang-btn" onclick="setLang('ja')">🇯🇵</span>
+    <span class="lang-btn" onclick="setLang('ko')">🇰🇷</span>
+  </div>
+</nav>
 
-  
+<header>
+  <h1>Welcome to InventariosTA</h1>
+  <p>The app to efficiently manage your inventory</p>
+</header>
+
+<div class="container">
+
+<div class="section">
+<h2>What is InventariosTA?</h2>
+<p>
+InventariosTA is a mobile application designed for efficient inventory management in small and medium-sized businesses.
+It allows you to register products, track stock movements, and generate real-time reports.
+The app automatically syncs your data with Google Drive for secure backups and restoration.
+</p>
+</div>
+
+<div class="section">
+<h2>Main Features</h2>
+<ul>
+<li>Product and category management.</li>
+<li>Inventory movement tracking.</li>
+<li>Google Drive data backup and synchronization.</li>
+<li>Detailed inventory reports and statistics.</li>
+<li>Simple and intuitive interface.</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Why do we request access to your Google account?</h2>
+<p>
+The app uses Google Sign-In for authentication and Google Drive access to securely store and restore your inventory backups.
+</p>
+<p><strong>We do not share your information with third parties.</strong></p>
+</div>
+
+<div class="btn-container">
+<a class="btn" href="https://technoalex1.github.io/inventariosta1/common questions.html">
+Common Questions
+</a>
+
+<a class="btn" href="https://technoalex1.github.io/inventariosta1/privacy policies.html">
+Privacy Policies
+</a>
+
+<a class="btn" href="https://technoalex1.github.io/inventariosta1/terms and conditions.html">
+Terms & Conditions
+</a>
+
+<a class="btn" href="https://www.facebook.com/TechnoAlexx/" target="_blank">
+Facebook
+</a>
+</div>
+
+</div>
+
+<div id="google_translate_element"></div>
+
+<script>
+function googleTranslateElementInit(){
+  new google.translate.TranslateElement({
+    pageLanguage:'en',
+    includedLanguages:'en,es,zh-CN,hi,pt,fr,de,it,ja,ko',
+    autoDisplay:false
+  }, 'google_translate_element');
+}
+
+function setLang(lang){
+  const select=document.querySelector('.goog-te-combo');
+  if(select){
+    select.value=lang;
+    select.dispatchEvent(new Event('change'));
+  }
+}
+
+window.onload=()=>setTimeout(()=>setLang('en'),1200);
+</script>
+
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 </html>
