@@ -23,6 +23,7 @@ header{
   display:flex;
   justify-content:space-between;
   align-items:center;
+  position:relative;
 }
 
 header h1{
@@ -38,10 +39,10 @@ header h1{
 
 .menu{
   display:none;
-  background:white;
   position:absolute;
   top:60px;
   right:20px;
+  background:white;
   border-radius:12px;
   box-shadow:0 10px 25px rgba(0,0,0,.15);
   overflow:hidden;
@@ -56,9 +57,7 @@ header h1{
   font-weight:600;
 }
 
-.menu a:hover{
-  background:#e8f0fe;
-}
+.menu a:hover{background:#e8f0fe}
 
 /* CONTENT */
 .container{
@@ -77,6 +76,8 @@ h2{
   margin-bottom:10px;
   color:#1a1a1a;
 }
+
+p{margin-bottom:12px}
 
 ul{margin-left:20px}
 ul li{margin-bottom:8px}
@@ -102,13 +103,13 @@ ul li{margin-bottom:8px}
 
 /* TRANSLATOR */
 .translator{
-  margin:40px auto;
+  margin:50px auto 30px;
   text-align:center;
 }
 
 .lang-btn{
+  font-size:24px;
   cursor:pointer;
-  font-size:22px;
   margin:6px;
 }
 
@@ -146,32 +147,42 @@ body{top:0!important}
 <div class="section">
 <h2>What is InventariosTA?</h2>
 <p>
-InventariosTA is a mobile application designed to efficiently manage inventories for small and medium-sized businesses.
-It allows you to register products, control stock movements, and generate real-time reports.
-Data is synchronized securely with Google Drive.
+InventariosTA is a mobile application designed for efficient inventory management in small and medium-sized businesses.
+It allows you to register products, perform stock counts, manage entries and exits, and generate real-time reports.
+The app synchronizes your data securely with Google Drive for backups and restoration.
 </p>
 </div>
 
 <div class="section">
 <h2>Main Features</h2>
 <ul>
-<li>Product and category management</li>
-<li>Inventory movement tracking</li>
-<li>Google Drive backup & sync</li>
-<li>Reports and statistics</li>
-<li>Simple and intuitive interface</li>
+<li>Product and category management.</li>
+<li>Inventory movement tracking.</li>
+<li>Google Drive data synchronization and backup.</li>
+<li>Detailed reports and statistics.</li>
+<li>Intuitive and easy-to-use interface.</li>
 </ul>
 </div>
 
+<div class="section">
+<h2>Why do we request access to your Google account?</h2>
+<p>
+The app uses Google Sign-In to authenticate users and Google Drive to store and restore inventory backups securely and privately.
+</p>
+<p><strong>We do not share your information with third parties.</strong></p>
+</div>
+
 <div class="btn-container">
-<a class="btn" href="https://technoalex1.github.io/inventariosta1/common questions.html">Common Questions</a>
-<a class="btn" href="https://technoalex1.github.io/inventariosta1/privacy policies.html">Privacy Policies</a>
-<a class="btn" href="https://technoalex1.github.io/inventariosta1/terms and conditions.html">Terms & Conditions</a>
+  <a class="btn" href="https://technoalex1.github.io/inventariosta1/common questions.html">Common Questions</a>
+  <a class="btn" href="https://technoalex1.github.io/inventariosta1/privacy policies.html">Privacy Policies</a>
+  <a class="btn" href="https://technoalex1.github.io/inventariosta1/terms and conditions.html">Terms & Conditions</a>
+  <br><br>
+  <a class="btn" href="https://www.facebook.com/TechnoAlexx/" target="_blank">Visit us on Facebook</a>
 </div>
 
 </div>
 
-<!-- TRANSLATOR -->
+<!-- TRANSLATOR (BOTTOM, NOT OVER TEXT) -->
 <div class="translator">
   <span class="lang-btn" onclick="setLang('en')">🇺🇸</span>
   <span class="lang-btn" onclick="setLang('es')">🇪🇸</span>
@@ -189,8 +200,8 @@ Data is synchronized securely with Google Drive.
 
 <script>
 function toggleMenu(){
-  const menu=document.getElementById('menu');
-  menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+  const m=document.getElementById('menu');
+  m.style.display = m.style.display==='block'?'none':'block';
 }
 
 function googleTranslateElementInit(){
@@ -202,10 +213,10 @@ function googleTranslateElementInit(){
 }
 
 function setLang(lang){
-  const select=document.querySelector('.goog-te-combo');
-  if(select){
-    select.value=lang;
-    select.dispatchEvent(new Event('change'));
+  const s=document.querySelector('.goog-te-combo');
+  if(s){
+    s.value=lang;
+    s.dispatchEvent(new Event('change'));
   }
 }
 </script>
