@@ -59,6 +59,20 @@ header h1{
 
 .menu a:hover{background:#e8f0fe}
 
+/* TRANSLATOR BAR */
+.translator{
+  background:#e8f0fe;
+  border-bottom:1px solid #d0ddf7;
+  padding:10px 0;
+  text-align:center;
+}
+
+.lang-btn{
+  font-size:24px;
+  cursor:pointer;
+  margin:0 6px;
+}
+
 /* CONTENT */
 .container{
   max-width:900px;
@@ -101,18 +115,6 @@ ul li{margin-bottom:8px}
 
 .btn:hover{background:#125bb3}
 
-/* TRANSLATOR */
-.translator{
-  margin:50px auto 30px;
-  text-align:center;
-}
-
-.lang-btn{
-  font-size:24px;
-  cursor:pointer;
-  margin:6px;
-}
-
 /* HIDE GOOGLE BRANDING */
 .goog-logo-link,
 .goog-te-gadget span,
@@ -141,6 +143,20 @@ body{top:0!important}
     <a href="https://technoalex1.github.io/inventariosta1/terms and conditions.html">Terms & Conditions</a>
   </div>
 </header>
+
+<!-- TRANSLATOR JUST BELOW HEADER -->
+<div class="translator">
+  <span class="lang-btn" onclick="setLang('en')">🇺🇸</span>
+  <span class="lang-btn" onclick="setLang('es')">🇪🇸</span>
+  <span class="lang-btn" onclick="setLang('zh-CN')">🇨🇳</span>
+  <span class="lang-btn" onclick="setLang('hi')">🇮🇳</span>
+  <span class="lang-btn" onclick="setLang('pt')">🇧🇷</span>
+  <span class="lang-btn" onclick="setLang('fr')">🇫🇷</span>
+  <span class="lang-btn" onclick="setLang('de')">🇩🇪</span>
+  <span class="lang-btn" onclick="setLang('it')">🇮🇹</span>
+  <span class="lang-btn" onclick="setLang('ja')">🇯🇵</span>
+  <span class="lang-btn" onclick="setLang('ko')">🇰🇷</span>
+</div>
 
 <div class="container">
 
@@ -180,20 +196,6 @@ The app uses Google Sign-In to authenticate users and Google Drive to store and 
   <a class="btn" href="https://www.facebook.com/TechnoAlexx/" target="_blank">Visit us on Facebook</a>
 </div>
 
-</div>
-
-<!-- TRANSLATOR (BOTTOM, NOT OVER TEXT) -->
-<div class="translator">
-  <span class="lang-btn" onclick="setLang('en')">🇺🇸</span>
-  <span class="lang-btn" onclick="setLang('es')">🇪🇸</span>
-  <span class="lang-btn" onclick="setLang('zh-CN')">🇨🇳</span>
-  <span class="lang-btn" onclick="setLang('hi')">🇮🇳</span>
-  <span class="lang-btn" onclick="setLang('pt')">🇧🇷</span>
-  <span class="lang-btn" onclick="setLang('fr')">🇫🇷</span>
-  <span class="lang-btn" onclick="setLang('de')">🇩🇪</span>
-  <span class="lang-btn" onclick="setLang('it')">🇮🇹</span>
-  <span class="lang-btn" onclick="setLang('ja')">🇯🇵</span>
-  <span class="lang-btn" onclick="setLang('ko')">🇰🇷</span>
 </div>
 
 <div id="google_translate_element" style="display:none;"></div>
