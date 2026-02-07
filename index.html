@@ -215,7 +215,7 @@ body{top:0!important}
 
 <!-- TRANSLATOR -->
 <div class="translator">
-  <div id="language-selector-text">Elegir Idioma</div>
+  <div id="language-selector-text">Choose Language</div>
   <span class="lang-btn" onclick="setLang('en')">🇺🇸</span>
   <span class="lang-btn" onclick="setLang('es')">🇪🇸</span>
   <span class="lang-btn" onclick="setLang('zh-CN')">🇨🇳</span>
@@ -295,6 +295,8 @@ function googleTranslateElementInit(){
     includedLanguages:'en,es,zh-CN,hi,pt,fr,de,it,ja,ko',
     autoDisplay:false
   }, 'google_translate_element');
+  // Ensure the custom language selector text is updated for the initial language
+  setLang('en');
 }
 
 function setLang(lang){
