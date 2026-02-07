@@ -72,16 +72,38 @@ header h1{
   cursor:pointer;
   margin:0 8px;
 }
-.image-promo-container {
-  margin: 20px auto;
-  width: fit-content;
-  padding: 15px;
+
+.promo-sidebar-image {
+  float: right;
+  width: 180px;
+  margin-left: 20px;
+  margin-bottom: 15px;
+  padding: 10px;
   background: white;
-  border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   text-align: center;
-  clear: both;
 }
+
+.promo-sidebar-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+.promo-sidebar-image p {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a73e8;
+  margin-bottom: 8px;
+}
+
+.promo-sidebar-image a img {
+  max-width: 120px;
+  margin-top: 5px;
+}
+
 
 .image-promo-container img {
   max-width: 100%;
@@ -193,7 +215,7 @@ body{top:0!important}
 
 <!-- TRANSLATOR -->
 <div class="translator">
-  <div>Elegir Idioma</div>
+  <div id="language-selector-text">Elegir Idioma</div>
   <span class="lang-btn" onclick="setLang('en')">🇺🇸</span>
   <span class="lang-btn" onclick="setLang('es')">🇪🇸</span>
   <span class="lang-btn" onclick="setLang('zh-CN')">🇨🇳</span>
@@ -206,17 +228,16 @@ body{top:0!important}
   <span class="lang-btn" onclick="setLang('ko')">🇰🇷</span>
 </div>
 
-<div class="image-promo-container">
+<div class="container">
+
+<div class="section">
+<div class="promo-sidebar-image">
   <img src="https://technoalex1.github.io/inventariosta1//file_000000002cdc722fa47406779ca5ea78.png" alt="InventariosTA App">
   <p>InventariosTA</p>
   <a href="https://play.google.com/store/apps/details?id=YOUR_APP_ID" target="_blank">
     <img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" alt="Available on Google Play" style="max-width: 150px; height: auto;">
   </a>
 </div>
-
-<div class="container">
-
-<div class="section">
 <h2>What is InventariosTA?</h2>
 <p>
 InventariosTA is a mobile application designed for efficient inventory management in small and medium-sized businesses.
@@ -281,6 +302,24 @@ function setLang(lang){
   if(s){
     s.value=lang;
     s.dispatchEvent(new Event('change'));
+  }
+
+  const langTextDiv = document.getElementById('language-selector-text');
+  if(langTextDiv){
+    let text = "Elegir Idioma"; // Default to Spanish
+    switch(lang){
+      case 'en': text = "Choose Language"; break;
+      case 'es': text = "Elegir Idioma"; break;
+      case 'zh-CN': text = "选择语言"; break; // Simplified Chinese
+      case 'hi': text = "भाषा चुनें"; break; // Hindi
+      case 'pt': text = "Escolher Idioma"; break; // Portuguese
+      case 'fr': text = "Choisir la Langue"; break; // French
+      case 'de': text = "Sprache wählen"; break; // German
+      case 'it': text = "Scegli Lingua"; break; // Italian
+      case 'ja': text = "言語を選択"; break; // Japanese
+      case 'ko': text = "언어 선택"; break; // Korean
+    }
+    langTextDiv.textContent = text;
   }
 }
 </script>
