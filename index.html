@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>InventariosTA</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
@@ -15,25 +16,27 @@ body{
   line-height:1.7;
 }
 
-/* HEADER */
+/* HEADER RESPONSIVO */
 header{
   background:#1a73e8;
   color:white;
-  padding:20px;
+  padding:15px 20px;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  position:relative;
+  position:sticky;
+  top:0;
+  z-index:1001;
 }
 
 header h1{
-  font-size:22px;
+  font-size:1.2rem;
   font-weight:700;
 }
 
 /* MENU */
 .menu-btn{
-  font-size:26px;
+  font-size:28px;
   cursor:pointer;
 }
 
@@ -41,12 +44,13 @@ header h1{
   display:none;
   position:absolute;
   top:60px;
-  right:20px;
+  right:10px;
   background:white;
   border-radius:12px;
   box-shadow:0 10px 25px rgba(0,0,0,.15);
   overflow:hidden;
   z-index:1000;
+  width:220px;
 }
 
 .menu a{
@@ -55,97 +59,92 @@ header h1{
   text-decoration:none;
   color:#1a73e8;
   font-weight:600;
+  border-bottom: 1px solid #f0f0f0;
 }
-
+.menu a:last-child { border-bottom: none; }
 .menu a:hover{background:#e8f0fe}
 
 /* TRANSLATOR BAR */
 .translator{
   background:#e8f0fe;
   border-bottom:1px solid #d0ddf7;
-  padding:10px 0;
+  padding:15px 10px;
   text-align:center;
 }
 
+#language-selector-text {
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #1a73e8;
+}
+
+.lang-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
 .lang-btn{
-  font-size:48px;
+  font-size:32px;
   cursor:pointer;
-  margin:0 8px;
+  transition: transform 0.2s;
 }
-
-.promo-sidebar-image {
-  float: right;
-  width: 180px;
-  margin-left: 20px;
-  margin-bottom: 15px;
-  padding: 10px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  text-align: center;
-}
-
-.promo-sidebar-image img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 6px;
-  margin-bottom: 8px;
-}
-
-.promo-sidebar-image p {
-  font-size: 14px;
-  font-weight: 600;
-  color: #1a73e8;
-  margin-bottom: 8px;
-}
-
-.promo-sidebar-image a img {
-  max-width: 120px;
-  margin-top: 5px;
-}
-
-
-.image-promo-container img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 10px;
-}
-
-.image-promo-container p {
-  font-size: 16px;
-  font-weight: 600;
-  color: #1a73e8;
-  margin-bottom: 10px;
-}
+.lang-btn:hover { transform: scale(1.2); }
 
 /* CONTENT */
 .container{
   max-width:900px;
-  margin:40px auto;
+  margin:20px auto;
   background:white;
-  padding:40px;
+  padding:30px 20px;
   border-radius:16px;
   box-shadow:0 10px 25px rgba(0,0,0,.05);
 }
 
 .section{margin-bottom:30px}
 
+.promo-sidebar-image {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.promo-sidebar-image img {
+  max-width: 150px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+@media(min-width: 768px) {
+  .promo-sidebar-image {
+    float: right;
+    width: 200px;
+    margin-left: 20px;
+  }
+  .container { margin: 40px auto; padding: 40px; }
+  header h1 { font-size: 1.5rem; }
+}
+
 h2{
-  font-size:24px;
-  margin-bottom:10px;
+  font-size:1.5rem;
+  margin-bottom:15px;
   color:#1a1a1a;
 }
 
 p{margin-bottom:12px}
 
-ul{margin-left:20px}
+ul{margin-left:20px; margin-bottom: 20px;}
 ul li{margin-bottom:8px}
 
 /* BUTTONS */
 .btn-container{
   text-align:center;
   margin-top:40px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
 }
 
 .btn{
@@ -156,10 +155,12 @@ ul li{margin-bottom:8px}
   font-size:16px;
   text-decoration:none;
   display:inline-block;
-  margin:10px;
+  width: 100%;
+  max-width: 300px;
+  transition: 0.3s;
 }
 
-.btn:hover{background:#125bb3}
+.btn:hover{background:#125bb3; transform: translateY(-2px);}
 
 /* FOOTER */
 footer{
@@ -171,32 +172,15 @@ footer{
 }
 
 footer img{
-  max-width:260px;
+  max-width:200px;
   width:100%;
   border-radius:14px;
   margin-top:20px;
-  box-shadow:0 8px 20px rgba(0,0,0,.35);
-}
-
-footer p{
-  margin-top:10px;
-  font-size:14px;
-  opacity:0.9;
 }
 
 /* HIDE GOOGLE BRANDING */
-.goog-logo-link,
-.goog-te-gadget span,
-.goog-te-banner-frame{
-  display:none!important;
-}
+.goog-logo-link, .goog-te-gadget span, .goog-te-banner-frame { display:none!important; }
 body{top:0!important}
-
-/* RESPONSIVE */
-@media(max-width:600px){
-  .container{padding:20px}
-  h2{font-size:20px}
-}
 </style>
 </head>
 
@@ -207,42 +191,42 @@ body{top:0!important}
   <div class="menu-btn" onclick="toggleMenu()">☰</div>
 
   <div class="menu" id="menu">
-    <a href="https://technoalex1.github.io/inventariosta1/common questions.html">Common Questions</a>
-    <a href="https://technoalex1.github.io/inventariosta1/privacy policies.html">Privacy Policies</a>
+    <a href="https://technoalex1.github.io/inventariosta1/common questions.html">Common Questions</a>     
+    <a href="https://technoalex1.github.io/inventariosta1/privacy policies.html">Privacy Policies</a>     
     <a href="https://technoalex1.github.io/inventariosta1/terms and conditions.html">Terms & Conditions</a>
+    <a href="https://technoalex1.github.io/inventariosta1/support.html">Support</a>
   </div>
 </header>
 
-<!-- TRANSLATOR -->
 <div class="translator">
   <div id="language-selector-text">Choose Language</div>
-  <span class="lang-btn" onclick="setLang('en')">🇺🇸</span>
-  <span class="lang-btn" onclick="setLang('es')">🇪🇸</span>
-  <span class="lang-btn" onclick="setLang('zh-CN')">🇨🇳</span>
-  <span class="lang-btn" onclick="setLang('hi')">🇮🇳</span>
-  <span class="lang-btn" onclick="setLang('pt')">🇧🇷</span>
-  <span class="lang-btn" onclick="setLang('fr')">🇫🇷</span>
-  <span class="lang-btn" onclick="setLang('de')">🇩🇪</span>
-  <span class="lang-btn" onclick="setLang('it')">🇮🇹</span>
-  <span class="lang-btn" onclick="setLang('ja')">🇯🇵</span>
-  <span class="lang-btn" onclick="setLang('ko')">🇰🇷</span>
+  <div class="lang-grid">
+    <span class="lang-btn" onclick="setLang('en')">🇺🇸</span>
+    <span class="lang-btn" onclick="setLang('es')">🇪🇸</span>
+    <span class="lang-btn" onclick="setLang('zh-CN')">🇨🇳</span>
+    <span class="lang-btn" onclick="setLang('hi')">🇮🇳</span>
+    <span class="lang-btn" onclick="setLang('pt')">🇧🇷</span>
+    <span class="lang-btn" onclick="setLang('fr')">🇫🇷</span>
+    <span class="lang-btn" onclick="setLang('de')">🇩🇪</span>
+    <span class="lang-btn" onclick="setLang('it')">🇮🇹</span>
+    <span class="lang-btn" onclick="setLang('ja')">🇯🇵</span>
+    <span class="lang-btn" onclick="setLang('ko')">🇰🇷</span>
+  </div>
 </div>
 
 <div class="container">
 
 <div class="section">
 <div class="promo-sidebar-image">
-  <img src="https://technoalex1.github.io/inventariosta1//logo1.jpg" alt="InventariosTA App">
-  <p>InventariosTA</p>
+  <img src="https://technoalex1.github.io/inventariosta1//file_000000002cdc722fa47406779ca5ea78.png" alt="InventariosTA App">
+  <p style="font-weight:600; color:#1a73e8; margin-top:5px;">InventariosTA</p>
   <a href="https://play.google.com/store/apps/details?id=YOUR_APP_ID" target="_blank">
-    <img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" alt="Available on Google Play" style="max-width: 150px; height: auto;">
+    <img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" alt="Get it on Google Play" style="max-width: 140px; box-shadow:none;">
   </a>
 </div>
 <h2>What is InventariosTA?</h2>
 <p>
-InventariosTA is a mobile application designed for efficient inventory management in small and medium-sized businesses.
-It allows you to register products, perform stock counts, manage entries and exits, and generate real-time reports.
-The app synchronizes your data securely with Google Drive for backups and restoration.
+InventariosTA is a mobile application designed for efficient inventory management in small and medium-sized businesses. It allows you to register products, perform stock counts, manage entries and exits, and generate real-time reports.
 </p>
 </div>
 
@@ -257,28 +241,18 @@ The app synchronizes your data securely with Google Drive for backups and restor
 </ul>
 </div>
 
-<div class="section">
-<h2>Why do we request access to your Google account?</h2>
-<p>
-The app uses Google Sign-In to authenticate users and Google Drive to store and restore inventory backups securely and privately.
-</p>
-<p><strong>We do not share your information with third parties.</strong></p>
-</div>
-
 <div class="btn-container">
   <a class="btn" href="https://technoalex1.github.io/inventariosta1/common questions.html">Common Questions</a>
   <a class="btn" href="https://technoalex1.github.io/inventariosta1/privacy policies.html">Privacy Policies</a>
   <a class="btn" href="https://technoalex1.github.io/inventariosta1/terms and conditions.html">Terms & Conditions</a>
-  <br><br>
-  <a class="btn" href="https://www.facebook.com/TechnoAlexx/" target="_blank">Visit us on Facebook</a>
+  <a class="btn" href="https://technoalex1.github.io/inventariosta1/support.html">Support</a>
 </div>
 
 </div>
 
-<!-- FOOTER -->
 <footer>
   <p>© 2026 InventariosTA — Made in Guatemala 🇬🇹 by <strong>TechnoAlex</strong></p>
-  <img src="https://technoalex1.github.io/inventariosta1/FB_IMG_1768959474984.jpg" alt="TechnoAlex">
+  <img src="https://technoalex1.github.io/inventariosta1/FB_IMG_1768959474984.jpg" alt="TechnoAlex">      
 </footer>
 
 <div id="google_translate_element" style="display:none;"></div>
@@ -295,8 +269,6 @@ function googleTranslateElementInit(){
     includedLanguages:'en,es,zh-CN,hi,pt,fr,de,it,ja,ko',
     autoDisplay:false
   }, 'google_translate_element');
-  // Ensure the custom language selector text is updated for the initial language
-  setLang('en');
 }
 
 function setLang(lang){
@@ -308,25 +280,28 @@ function setLang(lang){
 
   const langTextDiv = document.getElementById('language-selector-text');
   if(langTextDiv){
-    let text = "Elegir Idioma"; // Default to Spanish
+    let text = "Choose Language"; 
     switch(lang){
       case 'en': text = "Choose Language"; break;
       case 'es': text = "Elegir Idioma"; break;
-      case 'zh-CN': text = "选择语言"; break; // Simplified Chinese
-      case 'hi': text = "भाषा चुनें"; break; // Hindi
-      case 'pt': text = "Escolher Idioma"; break; // Portuguese
-      case 'fr': text = "Choisir la Langue"; break; // French
-      case 'de': text = "Sprache wählen"; break; // German
-      case 'it': text = "Scegli Lingua"; break; // Italian
-      case 'ja': text = "言語を選択"; break; // Japanese
-      case 'ko': text = "언어 선택"; break; // Korean
+      case 'zh-CN': text = "选择语言"; break;
+      case 'hi': text = "भाषा चुनें"; break;
+      case 'pt': text = "Escolher Idioma"; break;
+      case 'fr': text = "Choisir la Langue"; break;
+      case 'de': text = "Sprache wählen"; break;
+      case 'it': text = "Scegli Lingua"; break;
+      case 'ja': text = "言語を選択"; break;
+      case 'ko': text = "언어 선택"; break;
     }
     langTextDiv.textContent = text;
   }
 }
+
+// Default to English on load
+window.onload=()=>setTimeout(()=>setLang('en'),1200);
 </script>
 
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>       
 
 </body>
 </html>
