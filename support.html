@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>InventariosTA – Support</title>
+<title>InventariosTA – Soporte</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -15,47 +15,62 @@ body{
   line-height:1.7;
 }
 
-/* HEADER */
+/* HEADER (Igual a web.txt) */
 header{
   background:#1a73e8;
   color:white;
-  padding:45px 20px;
-  text-align:center;
+  padding:20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:relative;
 }
 
 header h1{
-  font-size:36px;
+  font-size:22px;
   font-weight:700;
 }
 
-header p{
-  opacity:.9;
+/* MENU */
+.menu-btn{
+  font-size:26px;
+  cursor:pointer;
 }
 
-/* LANGUAGE BAR */
-.language-bar{
-  background:#ffffff;
-  border-bottom:1px solid #e0e0e0;
-  padding:12px;
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:10px;
+.menu{
+  display:none;
+  position:absolute;
+  top:60px;
+  right:20px;
+  background:white;
+  border-radius:12px;
+  box-shadow:0 10px 25px rgba(0,0,0,.15);
+  overflow:hidden;
+  z-index:1000;
+}
+
+.menu a{
+  display:block;
+  padding:14px 20px;
+  text-decoration:none;
+  color:#1a73e8;
+  font-weight:600;
+}
+
+.menu a:hover{background:#e8f0fe}
+
+/* TRANSLATOR BAR (Igual a web.txt) */
+.translator{
+  background:#e8f0fe;
+  border-bottom:1px solid #d0ddf7;
+  padding:10px 0;
+  text-align:center;
 }
 
 .lang-btn{
+  font-size:48px;
   cursor:pointer;
-  padding:6px 10px;
-  border-radius:8px;
-  border:1px solid #ddd;
-  background:#f9f9f9;
-  transition:.2s;
-  font-size:14px;
-}
-
-.lang-btn:hover{
-  background:#e8f0fe;
-  border-color:#1a73e8;
+  margin:0 8px;
 }
 
 /* CONTENT */
@@ -71,14 +86,14 @@ header p{
 .section{margin-bottom:30px; text-align: center;}
 
 h2{
-  font-size:28px;
+  font-size:26px;
   margin-bottom:15px;
   color:#1a1a1a;
 }
 
 p{margin-bottom:20px; font-size: 18px;}
 
-/* BUTTONS */
+/* BOTONES DE SOPORTE */
 .support-options {
   display: flex;
   flex-direction: column;
@@ -116,15 +131,6 @@ p{margin-bottom:20px; font-size: 18px;}
   background: #128c7e;
 }
 
-.btn-secondary {
-  background: #607d8b;
-  margin-top: 20px;
-}
-
-.btn-secondary:hover {
-  background: #455a64;
-}
-
 /* FOOTER */
 footer{
   background:#1a1a1a;
@@ -151,16 +157,12 @@ footer p{
 /* HIDE GOOGLE BRANDING */
 .goog-logo-link,
 .goog-te-gadget span,
-.goog-te-banner-frame,
-.goog-te-gadget-simple img{
+.goog-te-banner-frame{
   display:none!important;
 }
 body{top:0!important}
-#google_translate_element{display:none}
 
-/* RESPONSIVE */
 @media(max-width:600px){
-  header h1{font-size:28px}
   .container{padding:25px}
   h2{font-size:22px}
 }
@@ -171,75 +173,100 @@ body{top:0!important}
 
 <header>
   <h1>InventariosTA</h1>
-  <p>Technical Support & Contact</p>
+  <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+  <div class="menu" id="menu">
+    <a href="https://technoalex1.github.io/inventariosta1/">Inicio</a>
+    <a href="https://technoalex1.github.io/inventariosta1/common questions.html">Preguntas Frecuentes</a>     
+    <a href="https://technoalex1.github.io/inventariosta1/privacy policies.html">Privacidad</a>     
+    <a href="https://technoalex1.github.io/inventariosta1/terms and conditions.html">Términos</a>
+  </div>
 </header>
 
-<div class="language-bar">
-  <span class="lang-btn" onclick="setLang('en')">🇺🇸 English</span>
-  <span class="lang-btn" onclick="setLang('es')">🇪🇸 Español</span>
-  <span class="lang-btn" onclick="setLang('zh-CN')">🇨🇳 中文</span>
-  <span class="lang-btn" onclick="setLang('hi')">🇮🇳 हिन्दी</span>
-  <span class="lang-btn" onclick="setLang('pt')">🇧🇷 Português</span>
-  <span class="lang-btn" onclick="setLang('fr')">🇫🇷 Français</span>
-  <span class="lang-btn" onclick="setLang('de')">🇩🇪 Deutsch</span>
-  <span class="lang-btn" onclick="setLang('it')">🇮🇹 Italiano</span>
-  <span class="lang-btn" onclick="setLang('ja')">🇯🇵 日本語</span>
-  <span class="lang-btn" onclick="setLang('ko')">🇰🇷 한국어</span>
+<!-- TRANSLATOR (Igual a web.txt) -->
+<div class="translator">
+  <div id="language-selector-text">Elegir Idioma</div>
+  <span class="lang-btn" onclick="setLang('en')">🇺🇸</span>
+  <span class="lang-btn" onclick="setLang('es')">🇪🇸</span>
+  <span class="lang-btn" onclick="setLang('zh-CN')">🇨🇳</span>
+  <span class="lang-btn" onclick="setLang('hi')">🇮🇳</span>
+  <span class="lang-btn" onclick="setLang('pt')">🇧🇷</span>
+  <span class="lang-btn" onclick="setLang('fr')">🇫🇷</span>
+  <span class="lang-btn" onclick="setLang('de')">🇩🇪</span>
+  <span class="lang-btn" onclick="setLang('it')">🇮🇹</span>
+  <span class="lang-btn" onclick="setLang('ja')">🇯🇵</span>
+  <span class="lang-btn" onclick="setLang('ko')">🇰🇷</span>
 </div>
 
 <div class="container">
 
 <div class="section">
-  <h2>How can we help you?</h2>
-  <p>If you have questions, problems with the app, or need technical assistance, please contact us through our official channels.</p>
+  <h2>¿Cómo podemos ayudarte?</h2>
+  <p>Si tienes dudas, problemas con la aplicación o necesitas asistencia técnica, contáctanos por nuestros canales oficiales.</p>
   
   <div class="support-options">
     <a href="https://wa.me/50235224837" target="_blank" class="btn btn-whatsapp">
-      Contact via WhatsApp
+      Contactar por WhatsApp
     </a>
     
     <a href="mailto:3lectricfilms@gmail.com" class="btn">
-      Send an Email
+      Enviar Correo Electrónico
     </a>
   </div>
-</div>
-
-<div style="text-align: center; margin-top: 40px;">
-  <a class="btn btn-secondary" href="https://technoalex1.github.io/inventariosta1/">Return to Main Page</a>
 </div>
 
 </div>
 
 <!-- FOOTER -->
 <footer>
-  <p>© 2026 InventariosTA — Made in Guatemala 🇬🇹 by <strong>TechnoAlex</strong></p>
+  <p>© 2026 InventariosTA — Hecho en Guatemala 🇬🇹 por <strong>TechnoAlex</strong></p>
   <img src="https://technoalex1.github.io/inventariosta1/FB_IMG_1768959474984.jpg" alt="TechnoAlex">      
 </footer>
 
-<div id="google_translate_element"></div>
+<div id="google_translate_element" style="display:none;"></div>
 
 <script>
+function toggleMenu(){
+  const m=document.getElementById('menu');
+  m.style.display = m.style.display==='block'?'none':'block';
+}
+
 function googleTranslateElementInit(){
   new google.translate.TranslateElement({
-    pageLanguage:'en',
+    pageLanguage:'es',
     includedLanguages:'en,es,zh-CN,hi,pt,fr,de,it,ja,ko',
     autoDisplay:false
   }, 'google_translate_element');
 }
 
 function setLang(lang){
-  const select=document.querySelector('.goog-te-combo');
-  if(select){
-    select.value=lang;
-    select.dispatchEvent(new Event('change'));
+  const s=document.querySelector('.goog-te-combo');
+  if(s){
+    s.value=lang;
+    s.dispatchEvent(new Event('change'));
+  }
+
+  const langTextDiv = document.getElementById('language-selector-text');
+  if(langTextDiv){
+    let text = "Elegir Idioma"; 
+    switch(lang){
+      case 'en': text = "Choose Language"; break;
+      case 'es': text = "Elegir Idioma"; break;
+      case 'zh-CN': text = "选择语言"; break;
+      case 'hi': text = "भाषा चुनें"; break;
+      case 'pt': text = "Escolher Idioma"; break;
+      case 'fr': text = "Choisir la Langue"; break;
+      case 'de': text = "Sprache wählen"; break;
+      case 'it': text = "Scegli Lingua"; break;
+      case 'ja': text = "言語を選択"; break;
+      case 'ko': text = "언어 선택"; break;
+    }
+    langTextDiv.textContent = text;
   }
 }
-
-// Auto-translate to Spanish if browser preferred, but default to English as per previous files
-window.onload=()=>setTimeout(()=>setLang('en'),1200);
 </script>
 
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>       
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>       
 
 </body>
 </html>
