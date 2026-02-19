@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>InventariosTA – Terms of Service</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
@@ -16,78 +17,105 @@ body{
 header{
   background:#1a73e8;
   color:white;
-  padding:45px 20px;
+  padding:30px 20px;
   text-align:center;
+  position:relative;
 }
-header h1{font-size:36px;font-weight:700}
+header h1{font-size:1.8rem;font-weight:700}
 header p{opacity:.9}
 
-/* Language bar */
-.language-bar{
+/* MENU */
+.menu-btn{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size:28px;
+  cursor:pointer;
+}
+
+.menu{
+  display:none;
+  position:absolute;
+  top:60px;
+  right:10px;
+  background:white;
+  border-radius:12px;
+  box-shadow:0 10px 25px rgba(0,0,0,.15);
+  overflow:hidden;
+  z-index:1000;
+  width:220px;
+  text-align: left;
+}
+
+.menu a{
+  display:block;
+  padding:14px 20px;
+  text-decoration:none;
+  color:#1a73e8;
+  font-weight:600;
+  border-bottom: 1px solid #f0f0f0;
+}
+.menu a:last-child { border-bottom: none; }
+.menu a:hover{background:#e8f0fe}
+
+/* TRANSLATOR BAR */
+.translator{
   background:#ffffff;
   border-bottom:1px solid #e0e0e0;
-  padding:12px;
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:10px;
+  padding:15px 10px;
+  text-align:center;
 }
+
+#language-selector-text {
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #1a73e8;
+}
+
+.lang-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
 .lang-btn{
+  font-size:32px;
   cursor:pointer;
-  padding:6px 10px;
-  border-radius:8px;
-  border:1px solid #ddd;
-  background:#f9f9f9;
-  transition:.2s;
-  font-size:14px;
 }
-.lang-btn:hover{
-  background:#e8f0fe;
-  border-color:#1a73e8;
+
+.container{
+  max-width:900px;
+  margin:20px auto;
+  background:white;
+  padding:30px 20px;
+  border-radius:16px;
+  box-shadow:0 10px 25px rgba(0,0,0,.05);
 }
+
+.section{margin-bottom:40px}
+h2{font-size:1.4rem;margin-bottom:14px;color:#1a1a1a}
+p{margin-bottom:12px}
+ul,ol{margin-left:22px;margin-bottom:14px}
+li{margin-bottom:6px}
 
 .btn{
   background:#1a73e8;
   color:white;
   padding:14px 28px;
   border-radius:8px;
-  font-size:16px;
   text-decoration:none;
   display:inline-block;
-  margin:10px;
+  margin:10px 0;
+  width: 100%;
+  max-width: 300px;
+  text-align: center;
 }
-
 .btn:hover{background:#125bb3}
 
-/* Main container */
-.container{
-  max-width:1000px;
-  margin:40px auto;
-  background:white;
-  padding:40px;
-  border-radius:16px;
-  box-shadow:0 10px 25px rgba(0,0,0,.05);
-}
-.section{margin-bottom:40px}
-h2{font-size:24px;margin-bottom:14px;color:#1a1a1a}
-p{margin-bottom:12px}
-ul,ol{margin-left:22px;margin-bottom:14px}
-li{margin-bottom:6px}
-
-/* Hide Google branding */
-.goog-logo-link,
-.goog-te-gadget span,
-.goog-te-banner-frame,
-.goog-te-gadget-simple img{
-  display:none!important;
-}
+/* HIDE GOOGLE BRANDING */
+.goog-logo-link, .goog-te-gadget span, .goog-te-banner-frame { display:none!important; }
 body{top:0!important}
-#google_translate_element{display:none}
-
-@media(max-width:600px){
-  header h1{font-size:28px}
-  .container{padding:20px}
-}
 </style>
 </head>
 
@@ -96,121 +124,111 @@ body{top:0!important}
 <header>
   <h1>InventariosTA</h1>
   <p>Terms of Service</p>
+  <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+  <div class="menu" id="menu">
+    <a href="https://technoalex1.github.io/inventariosta1/">Home</a>
+    <a href="https://technoalex1.github.io/inventariosta1/common questions.html">Common Questions</a>     
+    <a href="https://technoalex1.github.io/inventariosta1/privacy policies.html">Privacy Policies</a>
+    <a href="https://technoalex1.github.io/inventariosta1/support.html">Support</a>
+  </div>
 </header>
 
-<div class="language-bar">
-  <span class="lang-btn" onclick="setLang('en')">🇺🇸 English</span>
-  <span class="lang-btn" onclick="setLang('es')">🇪🇸 Español</span>
-  <span class="lang-btn" onclick="setLang('zh-CN')">🇨🇳 中文</span>
-  <span class="lang-btn" onclick="setLang('hi')">🇮🇳 हिन्दी</span>
-  <span class="lang-btn" onclick="setLang('pt')">🇧🇷 Português</span>
-  <span class="lang-btn" onclick="setLang('fr')">🇫🇷 Français</span>
-  <span class="lang-btn" onclick="setLang('de')">🇩🇪 Deutsch</span>
-  <span class="lang-btn" onclick="setLang('it')">🇮🇹 Italiano</span>
-  <span class="lang-btn" onclick="setLang('ja')">🇯🇵 日本語</span>
-  <span class="lang-btn" onclick="setLang('ko')">🇰🇷 한국어</span>
+<div class="translator">
+  <div id="language-selector-text">Choose Language</div>
+  <div class="lang-grid">
+    <span class="lang-btn" onclick="setLang('en')">🇺🇸</span>
+    <span class="lang-btn" onclick="setLang('es')">🇪🇸</span>
+    <span class="lang-btn" onclick="setLang('zh-CN')">🇨🇳</span>
+    <span class="lang-btn" onclick="setLang('hi')">🇮🇳</span>
+    <span class="lang-btn" onclick="setLang('pt')">🇧🇷</span>
+    <span class="lang-btn" onclick="setLang('fr')">🇫🇷</span>
+    <span class="lang-btn" onclick="setLang('de')">🇩🇪</span>
+    <span class="lang-btn" onclick="setLang('it')">🇮🇹</span>
+    <span class="lang-btn" onclick="setLang('ja')">🇯🇵</span>
+    <span class="lang-btn" onclick="setLang('ko')">🇰🇷</span>
+  </div>
 </div>
 
 <div class="container">
 
 <div class="section">
-<h2>Términos y Condiciones de Uso de InventariosTA</h2>
-<p><strong>Última actualización:</strong> 20 de enero de 2026</p>
-
-<p>Bienvenido a InventariosTA. Antes de utilizar nuestra aplicación, por favor, lee atentamente los siguientes Términos y Condiciones ("Términos").</p>
+<h2>Terms and Conditions of Use</h2>
+<p><strong>Last update:</strong> January 20, 2026</p>
+<p>By downloading, installing or using the InventariosTA application ("the Service"), you agree and undertake to comply with these Terms.</p>
 </div>
 
 <div class="section">
-<h2>1. Aceptación de los Términos</h2>
-
-<p>Al descargar, instalar o utilizar la aplicación InventariosTA ("el Servicio"), aceptas y te comprometes a cumplir con estos Términos. Si no estás de acuerdo con alguna parte de los Términos, no debes utilizar el Servicio.</p>
+<h2>1. Acceptance of Terms</h2>
+<p>If you do not agree with any part of the Terms, you must not use the Service.</p>
 </div>
 
 <div class="section">
-<h2>2. Descripción del Servicio</h2>
-
-<p>InventariosTA es una herramienta de software diseñada para ayudar a los usuarios a gestionar información de su negocio, incluyendo, entre otros, inventarios, ventas, compras, clientes, proveedores y reportes financieros. El Servicio permite el almacenamiento local de datos en el dispositivo del usuario y ofrece una función de sincronización y respaldo utilizando la cuenta de Google Drive del propio usuario.</p>
+<h2>2. Service Description</h2>
+<p>InventariosTA is a software tool designed to help users manage business information, including inventories, sales, purchases, and customers.</p>
 </div>
 
 <div class="section">
-<h2>3. Responsabilidades del Usuario</h2>
-
+<h2>3. User Responsibilities</h2>
 <ul>
-<li><strong>Exactitud de la Información:</strong> Eres el único responsable de la exactitud, calidad e integridad de los datos que introduces en la aplicación.</li>
-
-<li><strong>Seguridad de la Cuenta:</strong> Eres responsable de mantener la confidencialidad de tu cuenta de Google y de todas las actividades que ocurran bajo ella. El acceso no autorizado a tu cuenta de Google podría comprometer los datos respaldados por el Servicio.</li>
-
-<li><strong>Copias de Seguridad:</strong> El Servicio ofrece una herramienta para sincronizar y respaldar tus datos en tu propia cuenta de Google Drive. Es tu exclusiva responsabilidad activar y mantener esta función activa. La pérdida de datos por no tener una copia de seguridad actualizada no es responsabilidad del Servicio.</li>
+<li><strong>Accuracy of Information:</strong> You are responsible for the data you enter.</li>
+<li><strong>Security:</strong> You are responsible for maintaining the confidentiality of your Google account.</li>
+<li><strong>Backups:</strong> Activating and maintaining backups on Google Drive is your responsibility.</li>
 </ul>
 </div>
 
-<div class="section">
-<h2>4. Propiedad de los Datos</h2>
-
-<p>Tú eres y seguirás siendo el único propietario de todos los datos que introduzcas y gestiones dentro de la aplicación. InventariosTA no reclama ningún derecho de propiedad sobre tu información. La aplicación actúa únicamente como una herramienta para que tú gestiones tus datos.</p>
-</div>
-
-<div class="section">
-<h2>5. Limitación de Responsabilidad</h2>
-
-<p>El Servicio se proporciona "tal cual" y "según disponibilidad", sin garantías de ningún tipo, ya sean expresas o implícitas.</p>
-
-<ul>
-<li><strong>Pérdida de Datos:</strong> No seremos responsables de ninguna pérdida de datos. Como se detalla en nuestra Política de Privacidad, las actualizaciones de la aplicación pueden, en casos excepcionales de error, requerir un borrado de la base de datos local. La recuperación de datos depende enteramente de la existencia de una copia de seguridad reciente en tu Google Drive, cuya gestión es tu responsabilidad.</li>
-
-<li><strong>Daños Comerciales:</strong> En ningún caso seremos responsables de pérdidas de beneficios, interrupción del negocio, o cualquier otro daño comercial o indirecto derivado del uso o la incapacidad de usar el Servicio.</li>
-
-<li><strong>Servicios de Terceros:</strong> El funcionamiento de la autenticación y la sincronización depende de los servicios de Google (Google Sign-In y Google Drive). No somos responsables de fallos, interrupciones o problemas causados por estos servicios de terceros.</li>
-</ul>
-</div>
-
-<div class="section">
-<h2>6. Disponibilidad y Modificaciones del Servicio</h2>
-
-<p>Nos esforzamos por mantener el Servicio operativo. Sin embargo, podemos realizar modificaciones, actualizaciones o suspender temporalmente el Servicio para realizar mantenimientos sin previo aviso. Nos reservamos el derecho de modificar o descontinuar el Servicio (o cualquier parte de él) en el futuro.</p>
-</div>
-
-<div class="section">
-<h2>7. Terminación</h2>
-
-<p>Puedes dejar de usar el Servicio en cualquier momento. Nos reservamos el derecho de suspender o terminar el acceso al Servicio a cualquier usuario que incumpla estos Términos.</p>
-</div>
-
-<div class="section">
-<h2>8. Contacto</h2>
-
-<p>Si tienes alguna pregunta sobre estos Términos, contáctanos:</p>
-<p><strong>Email:</strong> 3lectricfilms@gmail.com</p>
-</div>
-
-<div style="text-align: center; margin-top: 30px;">
+<div style="text-align: center;">
   <a class="btn" href="https://technoalex1.github.io/inventariosta1/">Return to Main Page</a>
+  <br>
+  <a class="btn" href="https://technoalex1.github.io/inventariosta1/support.html">Contact Support</a>
 </div>
 </div>
 
-<div id="google_translate_element"></div>
+<div id="google_translate_element" style="display:none;"></div>
 
 <script>
+function toggleMenu(){
+  const m=document.getElementById('menu');
+  m.style.display = m.style.display==='block'?'none':'block';
+}
+
 function googleTranslateElementInit(){
   new google.translate.TranslateElement({
-    pageLanguage:'es',
+    pageLanguage:'en',
     includedLanguages:'en,es,zh-CN,hi,pt,fr,de,it,ja,ko',
     autoDisplay:false
   }, 'google_translate_element');
 }
 
 function setLang(lang){
-  const select=document.querySelector('.goog-te-combo');
-  if(select){
-    select.value=lang;
-    select.dispatchEvent(new Event('change'));
+  const s=document.querySelector('.goog-te-combo');
+  if(s){
+    s.value=lang;
+    s.dispatchEvent(new Event('change'));
+  }
+  const langTextDiv = document.getElementById('language-selector-text');
+  if(langTextDiv){
+    let text = "Choose Language"; 
+    switch(lang){
+      case 'en': text = "Choose Language"; break;
+      case 'es': text = "Elegir Idioma"; break;
+      case 'zh-CN': text = "选择语言"; break;
+      case 'hi': text = "भाषा चुनें"; break;
+      case 'pt': text = "Escolher Idioma"; break;
+      case 'fr': text = "Choisir la Langue"; break;
+      case 'de': text = "Sprache wählen"; break;
+      case 'it': text = "Scegli Lingua"; break;
+      case 'ja': text = "言語を選択"; break;
+      case 'ko': text = "언어 선택"; break;
+    }
+    langTextDiv.textContent = text;
   }
 }
 
 window.onload=()=>setTimeout(()=>setLang('en'),1200);
 </script>
 
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>       
 
 </body>
 </html>
