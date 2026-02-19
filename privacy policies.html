@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>InventariosTA – Privacy Policy</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
@@ -13,81 +14,112 @@ body{
   color:#2c3e50;
   line-height:1.7;
 }
+
 header{
   background:#1a73e8;
   color:white;
-  padding:45px 20px;
+  padding:30px 20px;
   text-align:center;
+  position:relative;
 }
-header h1{font-size:36px;font-weight:700}
+
+header h1{font-size:1.8rem;font-weight:700}
 header p{opacity:.9}
 
-/* Language bar */
-.language-bar{
+/* MENU (Responsivo) */
+.menu-btn{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size:28px;
+  cursor:pointer;
+  color: white;
+}
+
+.menu{
+  display:none;
+  position:absolute;
+  top:60px;
+  right:10px;
+  background:white;
+  border-radius:12px;
+  box-shadow:0 10px 25px rgba(0,0,0,.15);
+  overflow:hidden;
+  z-index:1000;
+  width:220px;
+  text-align: left;
+}
+
+.menu a{
+  display:block;
+  padding:14px 20px;
+  text-decoration:none;
+  color:#1a73e8;
+  font-weight:600;
+  border-bottom: 1px solid #f0f0f0;
+}
+.menu a:last-child { border-bottom: none; }
+.menu a:hover{background:#e8f0fe}
+
+/* TRANSLATOR BAR */
+.translator{
   background:#ffffff;
   border-bottom:1px solid #e0e0e0;
-  padding:12px;
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:10px;
+  padding:15px 10px;
+  text-align:center;
 }
+
+#language-selector-text {
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #1a73e8;
+}
+
+.lang-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
 .lang-btn{
+  font-size:32px;
   cursor:pointer;
-  padding:6px 10px;
-  border-radius:8px;
-  border:1px solid #ddd;
-  background:#f9f9f9;
-  transition:.2s;
-  font-size:14px;
 }
-.lang-btn:hover{
-  background:#e8f0fe;
-  border-color:#1a73e8;
+
+.container{
+  max-width:900px;
+  margin:20px auto;
+  background:white;
+  padding:30px 20px;
+  border-radius:16px;
+  box-shadow:0 10px 25px rgba(0,0,0,.05);
 }
+
+.section{margin-bottom:35px}
+h2{font-size:1.4rem;margin-bottom:12px;color:#1a1a1a}
+p{margin-bottom:12px}
+ul{margin-left:20px;margin-bottom:14px}
+li{margin-bottom:6px}
 
 .btn{
   background:#1a73e8;
   color:white;
   padding:14px 28px;
   border-radius:8px;
-  font-size:16px;
   text-decoration:none;
   display:inline-block;
-  margin:10px;
+  margin:10px 0;
+  width: 100%;
+  max-width: 300px;
+  text-align: center;
 }
 
 .btn:hover{background:#125bb3}
 
-/* Main container */
-.container{
-  max-width:1000px;
-  margin:40px auto;
-  background:white;
-  padding:40px;
-  border-radius:16px;
-  box-shadow:0 10px 25px rgba(0,0,0,.05);
-}
-.section{margin-bottom:40px}
-h2{font-size:24px;margin-bottom:14px;color:#1a1a1a}
-p{margin-bottom:12px}
-ul,ol{margin-left:22px;margin-bottom:14px}
-li{margin-bottom:6px}
-
-/* Hide Google branding */
-.goog-logo-link,
-.goog-te-gadget span,
-.goog-te-banner-frame,
-.goog-te-gadget-simple img{
-  display:none!important;
-}
+/* HIDE GOOGLE BRANDING */
+.goog-logo-link, .goog-te-gadget span, .goog-te-banner-frame { display:none!important; }
 body{top:0!important}
-#google_translate_element{display:none}
-
-@media(max-width:600px){
-  header h1{font-size:28px}
-  .container{padding:20px}
-}
 </style>
 </head>
 
@@ -96,149 +128,112 @@ body{top:0!important}
 <header>
   <h1>InventariosTA</h1>
   <p>Privacy Policy</p>
+  <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+  <div class="menu" id="menu">
+    <a href="https://technoalex1.github.io/inventariosta1/">Home</a>
+    <a href="https://technoalex1.github.io/inventariosta1/common questions.html">Common Questions</a>     
+    <a href="https://technoalex1.github.io/inventariosta1/terms and conditions.html">Terms & Conditions</a>
+    <a href="https://technoalex1.github.io/inventariosta1/support.html">Support</a>
+  </div>
 </header>
 
-<div class="language-bar">
-  <span class="lang-btn" onclick="setLang('en')">🇺🇸 English</span>
-  <span class="lang-btn" onclick="setLang('es')">🇪🇸 Español</span>
-  <span class="lang-btn" onclick="setLang('zh-CN')">🇨🇳 中文</span>
-  <span class="lang-btn" onclick="setLang('hi')">🇮🇳 हिन्दी</span>
-  <span class="lang-btn" onclick="setLang('pt')">🇧🇷 Português</span>
-  <span class="lang-btn" onclick="setLang('fr')">🇫🇷 Français</span>
-  <span class="lang-btn" onclick="setLang('de')">🇩🇪 Deutsch</span>
-  <span class="lang-btn" onclick="setLang('it')">🇮🇹 Italiano</span>
-  <span class="lang-btn" onclick="setLang('ja')">🇯🇵 日本語</span>
-  <span class="lang-btn" onclick="setLang('ko')">🇰🇷 한국어</span>
+<div class="translator">
+  <div id="language-selector-text">Choose Language</div>
+  <div class="lang-grid">
+    <span class="lang-btn" onclick="setLang('en')">🇺🇸</span>
+    <span class="lang-btn" onclick="setLang('es')">🇪🇸</span>
+    <span class="lang-btn" onclick="setLang('zh-CN')">🇨🇳</span>
+    <span class="lang-btn" onclick="setLang('hi')">🇮🇳</span>
+    <span class="lang-btn" onclick="setLang('pt')">🇧🇷</span>
+    <span class="lang-btn" onclick="setLang('fr')">🇫🇷</span>
+    <span class="lang-btn" onclick="setLang('de')">🇩🇪</span>
+    <span class="lang-btn" onclick="setLang('it')">🇮🇹</span>
+    <span class="lang-btn" onclick="setLang('ja')">🇯🇵</span>
+    <span class="lang-btn" onclick="setLang('ko')">🇰🇷</span>
+  </div>
 </div>
 
 <div class="container">
 
 <div class="section">
-<h2>Política de Privacidad de InventariosTA </h2>
-<p><strong>Última actualización:</strong> 20 de enero de 2026</p>
-
-<p>Gracias por usar InventariosTA. Tu privacidad es fundamental para nosotros. Esta política detalla qué información manejamos, cómo la usamos y cómo la protegemos, basándonos en el funcionamiento interno de la aplicación.</p>
+<h2>Privacy Policy</h2>
+<p><strong>Last update:</strong> January 20, 2026</p>
+<p>Thank you for using InventariosTA. Your privacy is fundamental to us. This policy details what information we handle, how we use it, and how we protect it.</p>
 </div>
 
 <div class="section">
-<h2>1. Información que Recopilamos</h2>
-
-<p>Para ofrecerte una experiencia completa, la aplicación maneja la siguiente información:</p>
-
+<h2>1. Information We Collect</h2>
 <ul>
-<li><strong>Información de tu Cuenta de Google:</strong>
-  <ul>
-    <li>Tu dirección de correo electrónico e identificador de cuenta para facilitar el inicio de sesión (autenticación).</li>
-  </ul>
-</li>
-
-<li><strong>Datos Generados por el Usuario:</strong>
-  <ul>
-    <li>Toda la información que introduces y gestionas en la aplicación, incluyendo (pero no limitado a): perfiles de negocio, productos, inventario, ventas, compras, clientes, proveedores, servicios, manufacturas, gastos e ingresos.</li>
-  </ul>
-</li>
-
-<li><strong>Metadatos de Sincronización:</strong>
-  <ul>
-    <li>Para asegurar la integridad de los datos entre dispositivos, almacenamos un identificador único del dispositivo que realiza la última modificación en cada registro. No recopilamos otros identificadores de hardware como IMEI o número de serie.</li>
-  </ul>
-</li>
+<li><strong>Google Account Information:</strong> Your email address for authentication.</li>
+<li><strong>User Generated Data:</strong> Business profiles, products, inventory, sales, and contacts.</li>
+<li><strong>Synchronization Metadata:</strong> Device identifier for data integrity.</li>
 </ul>
 </div>
 
 <div class="section">
-<h2>2. Cómo Usamos Tu Información</h2>
-
-<p>Tu información se utiliza exclusivamente para los siguientes propósitos:</p>
-
+<h2>2. How We Use Your Information</h2>
+<p>Your information is used exclusively for:</p>
 <ul>
-<li>Funcionalidad Principal: Para permitirte gestionar tu negocio tal como la aplicación lo promete.</li>
-<li>Autenticación: Para verificar tu identidad de forma segura a través del inicio de sesión de Google.</li>
-<li>Sincronización y Respaldo: Para guardar una copia de seguridad de tus datos en tu propia cuenta de Google Drive y permitirte usar la aplicación en múltiples dispositivos, manteniendo la información consistente.</li>
+<li>Main functionality and business management.</li>
+<li>Secure authentication via Google.</li>
+<li>Backup and synchronization through Google Drive.</li>
 </ul>
-
-<p><strong>No vendemos, alquilamos ni compartimos tus datos personales o de negocio con terceros.</strong></p>
+<p><strong>We do not sell or share your personal or business data with third parties.</strong></p>
 </div>
 
-<div class="section">
-<h2>3. Almacenamiento y Seguridad de los Datos</h2>
-
-<p>Este es un punto crucial de nuestra política. Tu información se almacena en dos lugares únicamente:</p>
-
-<ol>
-<li><strong>Localmente en tu Dispositivo:</strong> Todos tus datos se guardan en una base de datos privada en tu teléfono o tablet.</li>
-<li><strong>En tu Propia Cuenta de Google Drive:</strong> Cuando activas la sincronización, la aplicación crea un archivo de respaldo en una carpeta privada dentro de tu Google Drive. Nosotros no tenemos acceso a tu cuenta de Drive ni a ese archivo. El control es completamente tuyo.</li>
-</ol>
-
-<p>No utilizamos servidores externos propios para almacenar tu información personal o de negocio.</p>
-
-<p><strong>Advertencia sobre Actualizaciones (Transparencia):</strong> La aplicación incluye un mecanismo de seguridad que, en caso de que una actualización de la app requiera un cambio importante en la base de datos local y este proceso falle, podría eliminar los datos locales para prevenir corrupción y bloqueos. En tal caso, la aplicación intentará restaurar la información desde la última copia de seguridad en tu Google Drive. Por esta razón, es vital mantener la sincronización multidispositivo activada, así como mantener copias completas manuales antes de actualizar o sincronizar automáticamente.</p>
-</div>
-
-<div class="section">
-<h2>4. Servicios de Terceros</h2>
-
-<p>La aplicación utiliza los siguientes servicios de Google, y su uso está sujeto a las políticas de privacidad de Google:</p>
-
-<ul>
-<li>Google Sign-In: Para el proceso de autenticación.</li>
-<li>API de Google Drive: Para la funcionalidad de respaldo y sincronización.</li>
-</ul>
-</div>
-
-<div class="section">
-<h2>5. Tus Derechos y Control</h2>
-
-<p>Tienes control total sobre tu información:</p>
-
-<ul>
-<li><strong>Acceso y Modificación:</strong> Puedes ver y editar todos los datos de tu negocio directamente en la aplicación en cualquier momento.</li>
-<li><strong>Revocación de Permisos:</strong> Puedes revocar el acceso de la aplicación a tu cuenta de Google en cualquier momento desde la configuración de seguridad de tu cuenta de Google. Esto desactivará la sincronización.</li>
-<li><strong>Eliminación de Datos:</strong>
-  <ul>
-    <li>Puedes eliminar registros individuales (productos, ventas, etc.) desde la aplicación.</li>
-    <li>Al desinstalar la aplicación, se eliminará la base de datos local de tu dispositivo.</li>
-    <li>Puedes eliminar permanentemente la copia de seguridad eliminando el archivo correspondiente de tu Google Drive.</li>
-  </ul>
-</li>
-</ul>
-</div>
-
-<div class="section">
-<h2>6. Contacto</h2>
-
-<p>Si tienes alguna pregunta sobre esta política de privacidad, no dudes en contactarnos:</p>
-<p><strong>Email:</strong> 3lectricfilms@gmail.com  Guatemala</p>
-</div>
-
-<div style="text-align: center; margin-top: 30px;">
+<div style="text-align: center;">
   <a class="btn" href="https://technoalex1.github.io/inventariosta1/">Return to Main Page</a>
+  <br>
+  <a class="btn" href="https://technoalex1.github.io/inventariosta1/support.html">Contact Support</a>
 </div>
 </div>
 
-<div id="google_translate_element"></div>
+<div id="google_translate_element" style="display:none;"></div>
 
 <script>
+function toggleMenu(){
+  const m=document.getElementById('menu');
+  m.style.display = m.style.display==='block'?'none':'block';
+}
+
 function googleTranslateElementInit(){
   new google.translate.TranslateElement({
-    pageLanguage:'es',
+    pageLanguage:'en',
     includedLanguages:'en,es,zh-CN,hi,pt,fr,de,it,ja,ko',
     autoDisplay:false
   }, 'google_translate_element');
 }
 
 function setLang(lang){
-  const select=document.querySelector('.goog-te-combo');
-  if(select){
-    select.value=lang;
-    select.dispatchEvent(new Event('change'));
+  const s=document.querySelector('.goog-te-combo');
+  if(s){
+    s.value=lang;
+    s.dispatchEvent(new Event('change'));
+  }
+  const langTextDiv = document.getElementById('language-selector-text');
+  if(langTextDiv){
+    let text = "Choose Language"; 
+    switch(lang){
+      case 'en': text = "Choose Language"; break;
+      case 'es': text = "Elegir Idioma"; break;
+      case 'zh-CN': text = "选择语言"; break;
+      case 'hi': text = "भाषा चुनें"; break;
+      case 'pt': text = "Escolher Idioma"; break;
+      case 'fr': text = "Choisir la Langue"; break;
+      case 'de': text = "Sprache wählen"; break;
+      case 'it': text = "Scegli Lingua"; break;
+      case 'ja': text = "言語を選択"; break;
+      case 'ko': text = "언어 선택"; break;
+    }
+    langTextDiv.textContent = text;
   }
 }
 
 window.onload=()=>setTimeout(()=>setLang('en'),1200);
 </script>
 
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>       
 
 </body>
 </html>
