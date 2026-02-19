@@ -1,2 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>InventariosTA – Support</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-hola
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:#f4f6f8;
+  color:#2c3e50;
+  line-height:1.7;
+}
+
+/* HEADER */
+header{
+  background:#1a73e8;
+  color:white;
+  padding:45px 20px;
+  text-align:center;
+}
+
+header h1{
+  font-size:36px;
+  font-weight:700;
+}
+
+header p{
+  opacity:.9;
+}
+
+/* LANGUAGE BAR */
+.language-bar{
+  background:#ffffff;
+  border-bottom:1px solid #e0e0e0;
+  padding:12px;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:10px;
+}
+
+.lang-btn{
+  cursor:pointer;
+  padding:6px 10px;
+  border-radius:8px;
+  border:1px solid #ddd;
+  background:#f9f9f9;
+  transition:.2s;
+  font-size:14px;
+}
+
+.lang-btn:hover{
+  background:#e8f0fe;
+  border-color:#1a73e8;
+}
+
+/* CONTENT */
+.container{
+  max-width:900px;
+  margin:40px auto;
+  background:white;
+  padding:40px;
+  border-radius:16px;
+  box-shadow:0 10px 25px rgba(0,0,0,.05);
+}
+
+.section{margin-bottom:30px; text-align: center;}
+
+h2{
+  font-size:28px;
+  margin-bottom:15px;
+  color:#1a1a1a;
+}
+
+p{margin-bottom:20px; font-size: 18px;}
+
+/* BUTTONS */
+.support-options {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.btn{
+  background:#1a73e8;
+  color:white;
+  padding:16px 32px;
+  border-radius:12px;
+  font-size:18px;
+  text-decoration:none;
+  display:inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 400px;
+  transition: transform 0.2s, background 0.2s;
+  font-weight: 600;
+}
+
+.btn:hover{
+  background:#125bb3;
+  transform: translateY(-2px);
+}
+
+.btn-whatsapp {
+  background: #25d366;
+}
+
+.btn-whatsapp:hover {
+  background: #128c7e;
+}
+
+.btn-secondary {
+  background: #607d8b;
+  margin-top: 20px;
+}
+
+.btn-secondary:hover {
+  background: #455a64;
+}
+
+/* FOOTER */
+footer{
+  background:#1a1a1a;
+  color:#ffffff;
+  text-align:center;
+  padding:40px 20px;
+  margin-top:60px;
+}
+
+footer img{
+  max-width:260px;
+  width:100%;
+  border-radius:14px;
+  margin-top:20px;
+  box-shadow:0 8px 20px rgba(0,0,0,.35);
+}
+
+footer p{
+  margin-top:10px;
+  font-size:14px;
+  opacity:0.9;
+}
+
+/* HIDE GOOGLE BRANDING */
+.goog-logo-link,
+.goog-te-gadget span,
+.goog-te-banner-frame,
+.goog-te-gadget-simple img{
+  display:none!important;
+}
+body{top:0!important}
+#google_translate_element{display:none}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+  header h1{font-size:28px}
+  .container{padding:25px}
+  h2{font-size:22px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>InventariosTA</h1>
+  <p>Technical Support & Contact</p>
+</header>
+
+<div class="language-bar">
+  <span class="lang-btn" onclick="setLang('en')">🇺🇸 English</span>
+  <span class="lang-btn" onclick="setLang('es')">🇪🇸 Español</span>
+  <span class="lang-btn" onclick="setLang('zh-CN')">🇨🇳 中文</span>
+  <span class="lang-btn" onclick="setLang('hi')">🇮🇳 हिन्दी</span>
+  <span class="lang-btn" onclick="setLang('pt')">🇧🇷 Português</span>
+  <span class="lang-btn" onclick="setLang('fr')">🇫🇷 Français</span>
+  <span class="lang-btn" onclick="setLang('de')">🇩🇪 Deutsch</span>
+  <span class="lang-btn" onclick="setLang('it')">🇮🇹 Italiano</span>
+  <span class="lang-btn" onclick="setLang('ja')">🇯🇵 日本語</span>
+  <span class="lang-btn" onclick="setLang('ko')">🇰🇷 한국어</span>
+</div>
+
+<div class="container">
+
+<div class="section">
+  <h2>How can we help you?</h2>
+  <p>If you have questions, problems with the app, or need technical assistance, please contact us through our official channels.</p>
+  
+  <div class="support-options">
+    <a href="https://wa.me/50235224837" target="_blank" class="btn btn-whatsapp">
+      Contact via WhatsApp
+    </a>
+    
+    <a href="mailto:3lectricfilms@gmail.com" class="btn">
+      Send an Email
+    </a>
+  </div>
+</div>
+
+<div style="text-align: center; margin-top: 40px;">
+  <a class="btn btn-secondary" href="https://technoalex1.github.io/inventariosta1/">Return to Main Page</a>
+</div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 InventariosTA — Made in Guatemala 🇬🇹 by <strong>TechnoAlex</strong></p>
+  <img src="https://technoalex1.github.io/inventariosta1/FB_IMG_1768959474984.jpg" alt="TechnoAlex">      
+</footer>
+
+<div id="google_translate_element"></div>
+
+<script>
+function googleTranslateElementInit(){
+  new google.translate.TranslateElement({
+    pageLanguage:'en',
+    includedLanguages:'en,es,zh-CN,hi,pt,fr,de,it,ja,ko',
+    autoDisplay:false
+  }, 'google_translate_element');
+}
+
+function setLang(lang){
+  const select=document.querySelector('.goog-te-combo');
+  if(select){
+    select.value=lang;
+    select.dispatchEvent(new Event('change'));
+  }
+}
+
+// Auto-translate to Spanish if browser preferred, but default to English as per previous files
+window.onload=()=>setTimeout(()=>setLang('en'),1200);
+</script>
+
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>       
+
+</body>
+</html>
