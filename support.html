@@ -2,6 +2,8 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+<!-- Esta línea es CRUCIAL para que detecte si es móvil o PC -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>InventariosTA – Soporte</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
@@ -15,112 +17,144 @@ body{
   line-height:1.7;
 }
 
-/* HEADER (Igual a web.txt) */
+/* HEADER RESPONSIVO */
 header{
   background:#1a73e8;
   color:white;
-  padding:20px;
+  padding:15px 20px;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  position:relative;
+  position:sticky;
+  top:0;
+  z-index:1001;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 header h1{
-  font-size:22px;
+  font-size:1.2rem;
   font-weight:700;
+  white-space: nowrap;
 }
 
 /* MENU */
 .menu-btn{
-  font-size:26px;
+  font-size:28px;
   cursor:pointer;
+  padding:5px;
 }
 
 .menu{
   display:none;
   position:absolute;
   top:60px;
-  right:20px;
+  right:10px;
   background:white;
   border-radius:12px;
   box-shadow:0 10px 25px rgba(0,0,0,.15);
   overflow:hidden;
   z-index:1000;
+  width:200px;
 }
 
 .menu a{
   display:block;
-  padding:14px 20px;
+  padding:15px 20px;
   text-decoration:none;
   color:#1a73e8;
   font-weight:600;
+  border-bottom: 1px solid #f0f0f0;
 }
 
+.menu a:last-child{ border-bottom: none; }
 .menu a:hover{background:#e8f0fe}
 
-/* TRANSLATOR BAR (Igual a web.txt) */
+/* BARRA DE TRADUCCIÓN AUTO-AJUSTABLE */
 .translator{
   background:#e8f0fe;
   border-bottom:1px solid #d0ddf7;
-  padding:10px 0;
+  padding:15px 10px;
   text-align:center;
 }
 
-.lang-btn{
-  font-size:48px;
-  cursor:pointer;
-  margin:0 8px;
+#language-selector-text {
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #1a73e8;
 }
 
-/* CONTENT */
+.lang-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.lang-btn{
+  font-size:32px; /* Un poco más pequeño para que quepan más en móvil */
+  cursor:pointer;
+  transition: transform 0.2s;
+}
+
+.lang-btn:hover { transform: scale(1.2); }
+
+/* CONTENEDOR PRINCIPAL */
 .container{
-  max-width:900px;
-  margin:40px auto;
+  max-width:800px;
+  margin:20px auto;
   background:white;
-  padding:40px;
+  padding:30px 20px;
   border-radius:16px;
   box-shadow:0 10px 25px rgba(0,0,0,.05);
+}
+
+/* AJUSTES PARA PC */
+@media(min-width: 768px) {
+  header { padding: 20px 40px; }
+  header h1 { font-size: 1.5rem; }
+  .container { margin: 40px auto; padding: 40px; }
+  .lang-btn { font-size: 40px; }
 }
 
 .section{margin-bottom:30px; text-align: center;}
 
 h2{
-  font-size:26px;
+  font-size:1.5rem;
   margin-bottom:15px;
   color:#1a1a1a;
 }
 
-p{margin-bottom:20px; font-size: 18px;}
+p{margin-bottom:25px; font-size: 1.1rem; color: #546e7a;}
 
 /* BOTONES DE SOPORTE */
 .support-options {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
   align-items: center;
-  margin-top: 30px;
 }
 
 .btn{
   background:#1a73e8;
   color:white;
-  padding:16px 32px;
+  padding:18px 25px;
   border-radius:12px;
-  font-size:18px;
+  font-size:1.1rem;
   text-decoration:none;
   display:inline-flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 400px;
-  transition: transform 0.2s, background 0.2s;
+  max-width: 350px;
+  transition: all 0.3s ease;
   font-weight: 600;
+  border: none;
 }
 
 .btn:hover{
   background:#125bb3;
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(26,115,232,0.3);
 }
 
 .btn-whatsapp {
@@ -129,6 +163,7 @@ p{margin-bottom:20px; font-size: 18px;}
 
 .btn-whatsapp:hover {
   background: #128c7e;
+  box-shadow: 0 5px 15px rgba(37,211,102,0.3);
 }
 
 /* FOOTER */
@@ -137,11 +172,10 @@ footer{
   color:#ffffff;
   text-align:center;
   padding:40px 20px;
-  margin-top:60px;
 }
 
 footer img{
-  max-width:260px;
+  max-width:200px;
   width:100%;
   border-radius:14px;
   margin-top:20px;
@@ -150,22 +184,13 @@ footer img{
 
 footer p{
   margin-top:10px;
-  font-size:14px;
-  opacity:0.9;
+  font-size:0.9rem;
+  opacity:0.8;
 }
 
-/* HIDE GOOGLE BRANDING */
-.goog-logo-link,
-.goog-te-gadget span,
-.goog-te-banner-frame{
-  display:none!important;
-}
-body{top:0!important}
-
-@media(max-width:600px){
-  .container{padding:25px}
-  h2{font-size:22px}
-}
+/* GOOGLE TRANSLATE HIDE */
+.goog-logo-link, .goog-te-gadget span, .goog-te-banner-frame { display:none!important; }
+body{ top:0!important; }
 </style>
 </head>
 
@@ -183,44 +208,44 @@ body{top:0!important}
   </div>
 </header>
 
-<!-- TRANSLATOR (Igual a web.txt) -->
 <div class="translator">
   <div id="language-selector-text">Elegir Idioma</div>
-  <span class="lang-btn" onclick="setLang('en')">🇺🇸</span>
-  <span class="lang-btn" onclick="setLang('es')">🇪🇸</span>
-  <span class="lang-btn" onclick="setLang('zh-CN')">🇨🇳</span>
-  <span class="lang-btn" onclick="setLang('hi')">🇮🇳</span>
-  <span class="lang-btn" onclick="setLang('pt')">🇧🇷</span>
-  <span class="lang-btn" onclick="setLang('fr')">🇫🇷</span>
-  <span class="lang-btn" onclick="setLang('de')">🇩🇪</span>
-  <span class="lang-btn" onclick="setLang('it')">🇮🇹</span>
-  <span class="lang-btn" onclick="setLang('ja')">🇯🇵</span>
-  <span class="lang-btn" onclick="setLang('ko')">🇰🇷</span>
+  <div class="lang-grid">
+    <span class="lang-btn" onclick="setLang('en')" title="English">🇺🇸</span>
+    <span class="lang-btn" onclick="setLang('es')" title="Español">🇪🇸</span>
+    <span class="lang-btn" onclick="setLang('zh-CN')" title="Chinese">🇨🇳</span>
+    <span class="lang-btn" onclick="setLang('hi')" title="Hindi">🇮🇳</span>
+    <span class="lang-btn" onclick="setLang('pt')" title="Portuguese">🇧🇷</span>
+    <span class="lang-btn" onclick="setLang('fr')" title="French">🇫🇷</span>
+    <span class="lang-btn" onclick="setLang('de')" title="German">🇩🇪</span>
+    <span class="lang-btn" onclick="setLang('it')" title="Italian">🇮🇹</span>
+    <span class="lang-btn" onclick="setLang('ja')" title="Japanese">🇯🇵</span>
+    <span class="lang-btn" onclick="setLang('ko')" title="Korean">🇰🇷</span>
+  </div>
 </div>
 
 <div class="container">
 
-<div class="section">
-  <h2>¿Cómo podemos ayudarte?</h2>
-  <p>Si tienes dudas, problemas con la aplicación o necesitas asistencia técnica, contáctanos por nuestros canales oficiales.</p>
-  
-  <div class="support-options">
-    <a href="https://wa.me/50235224837" target="_blank" class="btn btn-whatsapp">
-      Contactar por WhatsApp
-    </a>
+  <div class="section">
+    <h2>¿Cómo podemos ayudarte?</h2>
+    <p>Si tienes dudas, problemas con la aplicación o necesitas asistencia técnica, estamos a un mensaje de distancia.</p>
     
-    <a href="mailto:3lectricfilms@gmail.com" class="btn">
-      Enviar Correo Electrónico
-    </a>
+    <div class="support-options">
+      <a href="https://wa.me/50235224837" target="_blank" class="btn btn-whatsapp">
+        Contactar por WhatsApp
+      </a>
+      
+      <a href="mailto:3lectricfilms@gmail.com" class="btn">
+        Enviar Correo Electrónico
+      </a>
+    </div>
   </div>
-</div>
 
 </div>
 
-<!-- FOOTER -->
 <footer>
   <p>© 2026 InventariosTA — Hecho en Guatemala 🇬🇹 por <strong>TechnoAlex</strong></p>
-  <img src="https://technoalex1.github.io/inventariosta1/FB_IMG_1768959474984.jpg" alt="TechnoAlex">      
+  <img src="https://technoalex1.github.io/inventariosta1/FB_IMG_1768959474984.jpg" alt="TechnoAlex Logo">      
 </footer>
 
 <div id="google_translate_element" style="display:none;"></div>
@@ -229,6 +254,14 @@ body{top:0!important}
 function toggleMenu(){
   const m=document.getElementById('menu');
   m.style.display = m.style.display==='block'?'none':'block';
+}
+
+// Cerrar menú si se hace clic fuera
+window.onclick = function(event) {
+  if (!event.target.matches('.menu-btn')) {
+    const m = document.getElementById('menu');
+    if (m.style.display === 'block') m.style.display = 'none';
+  }
 }
 
 function googleTranslateElementInit(){
