@@ -154,16 +154,115 @@ body{top:0!important}
 
 <div class="section">
 <h2>General Functionality</h2>
-<p><strong>Q:</strong> What is this application for?</p>
-<p><strong>A:</strong> It is a complete management system for your business. It allows you to keep a detailed control of inventory, products, sales, purchases, services, and customers.</p>
+<p><strong>Q: What is this application for?</strong></p>
+<p><strong>A:</strong> It is a complete management system for your business. It allows you to maintain detailed control over inventory, products, sales, purchases, services, customers, suppliers, and even manufacturing processes.</p>
+
+<p><strong>Q: What type of information can I manage?</strong></p>
+<p><strong>A:</strong> You can manage:</p>
+<ul>
+<li><strong>Products:</strong> Stock control, prices, categories.</li>
+<li><strong>Sales and Purchases:</strong> Record all transactions.</li>
+<li><strong>Customers and Suppliers:</strong> Maintain a database of your business contacts.</li>
+<li><strong>Services:</strong> If your business offers services, you can also manage them.</li>
+<li><strong>Manufacturing:</strong> Control the creation of products from raw materials.</li>
+<li><strong>Finances:</strong> Record income, expenses, and generate coupons.</li>
+<li><strong>Reports:</strong> Generate detailed reports of your operations.</li>
+</ul>
 </div>
 
 <div class="section">
-<h2>Data Synchronization (Google Drive)</h2>
-<p><strong>Q:</strong> How do I backup my information?</p>
-<p><strong>A:</strong> The app uses your Google Drive account to back up and synchronize your data safely.</p>
-<p><strong>Q:</strong> Is synchronization automatic?</p>
-<p><strong>A:</strong> Yes, you can activate the "Auto-Sync" option in the settings menu.</p>
+<h2>Multiple Business Management</h2>
+<p><strong>Q: Can I manage more than one business with the application?</strong></p>
+<p><strong>A:</strong> Yes. The application is designed so you can register multiple business profiles and activate one at a time to work on it.</p>
+
+<p><strong>Q: How do I switch between my businesses?</strong></p>
+<p><strong>A:</strong> In the application settings, you will find a section to manage your businesses. There you can select which one you want to be "active".</p>
+
+<p><strong>Q: I switched businesses and all my information disappeared! What happened?</strong></p>
+<p><strong>A:</strong> Don't worry, your information has not been deleted. Every piece of data you register (a product, a sale, a customer) is associated with the business you had active at that time. If you switch to another business profile, you will only see the information corresponding to that business. To see your previous data, simply reactivate the original business.</p>
+</div>
+
+<div class="section">
+<h2>Synchronization and Data Backup (Google Drive)</h2>
+<p><strong>Q: How can I back up my information so I don't lose it?</strong></p>
+<p><strong>A:</strong> The application uses your Google Drive account to back up and synchronize your data securely.</p>
+
+<p><strong>Q: How do I activate synchronization with Google Drive?</strong></p>
+<p><strong>A:</strong> Go to the Settings menu within the app, look for the Google Drive synchronization option, activate it, and select the Google account you wish to sync with.</p>
+
+<p><strong>Q: Is synchronization automatic?</strong></p>
+<p><strong>A:</strong> Yes, in the settings you can activate the "Auto-Sync" option so that the application automatically keeps your data backed up and synchronized in the cloud. You can also perform a manual synchronization whenever you need to.</p>
+
+<p><strong>Q: Can I use the app on several devices at the same time?</strong></p>
+<p><strong>A:</strong> Yes. The synchronization function is designed so you can work with the same information on different devices. The app identifies each record with a unique ID to avoid conflicts and duplicates.</p>
+</div>
+
+<div class="section">
+<h2>Common Troubleshooting</h2>
+<p><strong>Q: I updated the application and all my data was deleted! Why?</strong></p>
+<p><strong>A:</strong> This is a critical situation. The application has a security mechanism that, in case of a serious error when updating the local database structure, may delete local data to prevent the app from crashing or corrupting information. Immediately after, it will attempt to restore the last backup saved in Google Drive.</p>
+<p><strong>Vital Recommendation:</strong> To avoid data loss, make sure to always have Google Drive synchronization active.</p>
+
+<p><strong>Q: Synchronization is not working or gives an error. What can I do?</strong></p>
+<p><strong>A:</strong> Check the following points:</p>
+<ul>
+<li>Ensure you have a stable internet connection.</li>
+<li>Go to settings and verify that the selected Google Drive account is correct and that the app has the necessary permissions.</li>
+<li>Try performing a manual synchronization from the corresponding button.</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>User Guides (Step by Step)</h2>
+<p><strong>How to add a new product?</strong></p>
+<ol>
+<li>In the side menu, select "Inventory".</li>
+<li>Press the floating button with the + symbol in the bottom right corner.</li>
+<li>The "Create Product" form will open. Fill in all the requested information (name, price, quantity, category, etc.).</li>
+<li>Save the product.</li>
+</ol>
+
+<p><strong>How to edit an existing product?</strong></p>
+<ol>
+<li>Go to the "Inventory" section.</li>
+<li>Find the product you want to modify in the list and tap on it.</li>
+<li>The same product form will open, but with the information already loaded.</li>
+<li>Make the necessary changes and save.</li>
+</ol>
+
+<p><strong>How to switch between my different businesses?</strong></p>
+<ol>
+<li>Open the side navigation menu (swipe from the left or tap the menu icon).</li>
+<li>At the top of the menu, tap on the name of the business that is currently active.</li>
+<li>A dialog will appear with the list of all your registered businesses.</li>
+<li>Select the business you want to switch to.</li>
+</ol>
+
+<p><strong>How to generate a report?</strong></p>
+<ol>
+<li>Open the side menu and select "Reports".</li>
+<li>You will see a list of all available reports.</li>
+<li>Tap on the report you wish to generate.</li>
+</ol>
+
+<p><strong>How to configure synchronization with Google Drive?</strong></p>
+<ol>
+<li>Open the side menu and go to "Synchronization" (it may also be inside "Settings").</li>
+<li>On this screen, check the box to enable Google Drive synchronization.</li>
+<li>Select the Google account you want to use for backups.</li>
+<li>You can activate the "Automatic Synchronization" option.</li>
+</ol>
+</div>
+
+<div class="section">
+<h2>Common Action Flows (Sales, Purchases, Customers)</h2>
+<p>The application follows a consistent pattern. The flow for adding sales, purchases, customers, or suppliers is very similar to that of products:</p>
+<ol>
+<li>Navigate to the corresponding section from the side menu (e.g., "Sales", "Customers").</li>
+<li>Find and press the button to add a new item (usually a floating + button).</li>
+<li>Fill in the form that appears on the screen.</li>
+<li>Save the changes.</li>
+</ol>
 </div>
 
 <div style="text-align: center;">
