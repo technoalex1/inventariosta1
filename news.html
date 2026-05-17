@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Novedades - InventariosTA</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:#f4f6f8;
+  color:#2c3e50;
+  line-height:1.7;
+}
+
+/* HEADER RESPONSIVO */
+header{
+  background:#1a73e8;
+  color:white;
+  padding:15px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:sticky;
+  top:0;
+  z-index:1001;
+}
+
+header h1{
+  font-size:1.2rem;
+  font-weight:700;
+}
+
+/* MENU */
+.menu-btn{
+  font-size:28px;
+  cursor:pointer;
+}
+
+.menu{
+  display:none;
+  position:absolute;
+  top:60px;
+  right:10px;
+  background:white;
+  border-radius:12px;
+  box-shadow:0 10px 25px rgba(0,0,0,.15);
+  overflow:hidden;
+  z-index:1000;
+  width:220px;
+}
+
+.menu a{
+  display:block;
+  padding:14px 20px;
+  text-decoration:none;
+  color:#1a73e8;
+  font-weight:600;
+  border-bottom: 1px solid #f0f0f0;
+}
+.menu a:last-child { border-bottom: none; }
+.menu a:hover{background:#e8f0fe}
+
+/* TRANSLATOR BAR */
+.translator{
+  background:#e8f0fe;
+  border-bottom:1px solid #d0ddf7;
+  padding:15px 10px;
+  text-align:center;
+}
+
+#language-selector-text {
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #1a73e8;
+}
+
+.lang-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.lang-btn{
+  font-size:32px;
+  cursor:pointer;
+  transition: transform 0.2s;
+}
+.lang-btn:hover { transform: scale(1.2); }
+
+/* CONTENT */
+.container{
+  width: 100%;
+  max-width: 900px;
+  margin: 20px auto;
+  background:white;
+  padding: 30px 20px;
+  border-radius:16px;
+  box-shadow:0 10px 25px rgba(0,0,0,.05);
+}
+
+.section{
+  margin-bottom:30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+.section:last-child { border-bottom: none; }
+
+h2{
+  font-size:1.5rem;
+  margin-bottom:15px;
+  color:#1a73e8;
+}
+
+.news-badge {
+  background: #ff5252;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+p{margin-bottom:12px}
+
+@media(min-width: 768px) {
+  .container { margin: 40px auto; padding: 40px; }
+  header h1 { font-size: 1.5rem; }
+}
+
+/* BUTTONS */
+.btn-container{
+  text-align:center;
+  margin-top:40px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.btn{
+  background:#1a73e8;
+  color:white;
+  padding:14px 28px;
+  border-radius:8px;
+  font-size:16px;
+  text-decoration:none;
+  display:inline-block;
+  width: 100%;
+  max-width: 300px;
+  transition: 0.3s;
+}
+
+.btn:hover{background:#125bb3; transform: translateY(-2px);}
+
+/* FOOTER */
+footer{
+  background:#1a1a1a;
+  color:#ffffff;
+  text-align:center;
+  padding:40px 20px;
+  margin-top:60px;
+}
+
+footer img{
+  max-width:200px;
+  width:100%;
+  border-radius:14px;
+  margin-top:20px;
+}
+
+/* HIDE GOOGLE BRANDING */
+.goog-logo-link, .goog-te-gadget span, .goog-te-banner-frame { display:none!important; }
+body{top:0!important}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>InventariosTA - Novedades</h1>
+  <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+  <div class="menu" id="menu">
+    <a href="https://technoalex1.github.io/inventariosta1/index.html">Inicio</a>
+    <a href="https://technoalex1.github.io/inventariosta1/videoguia.html">Video Guía</a>
+    <a href="https://technoalex1.github.io/inventariosta1/support.html">Soporte</a>
+  </div>
+</header>
+
+<div class="translator">
+  <div id="language-selector-text">Elegir Idioma</div>
+  <div class="lang-grid">
+    <span class="lang-btn" onclick="setLang('en')">🇺🇸</span>
+    <span class="lang-btn" onclick="setLang('es')">🇪🇸</span>
+    <span class="lang-btn" onclick="setLang('zh-CN')">🇨🇳</span>
+    <span class="lang-btn" onclick="setLang('hi')">🇮🇳</span>
+    <span class="lang-btn" onclick="setLang('pt')">🇧🇷</span>
+    <span class="lang-btn" onclick="setLang('fr')">🇫🇷</span>
+    <span class="lang-btn" onclick="setLang('de')">🇩🇪</span>
+    <span class="lang-btn" onclick="setLang('it')">🇮🇹</span>
+    <span class="lang-btn" onclick="setLang('ja')">🇯🇵</span>
+    <span class="lang-btn" onclick="setLang('ko')">🇰🇷</span>
+  </div>
+</div>
+
+<div class="container">
+
+<div class="section">
+  <div class="news-badge">Nuevo</div>
+  <h2>✨ Obtén 10 estrellas para funciones Premium</h2>
+  <p>
+    ¡Hemos actualizado nuestra tienda! Se ha agregado un nuevo botón que te permite obtener <strong>10 estrellas</strong> de forma directa.
+  </p>
+  <p>
+    Puedes utilizar estas estrellas para acceder a todas las secciones premium de la aplicación, optimizando así la gestión de tu negocio.
+  </p>
+</div>
+
+<div class="section">
+  <div class="news-badge">Ayuda</div>
+  <h2>💬 ¿Tienes dudas o sugerencias?</h2>
+  <p>
+    Si tienes dudas sobre cómo usar la aplicación, presiona el botón de <strong>Soporte</strong> ubicado en la pantalla de inicio.
+  </p>
+  <p>
+    También valoramos tus comentarios: puedes enviarnos sugerencias, escribirnos por WhatsApp o por correo electrónico. ¡Te atenderemos con gusto en tu propio idioma!
+  </p>
+</div>
+
+<div class="btn-container">
+  <a class="btn" href="https://technoalex1.github.io/inventariosta1/support.html">Ir a Soporte</a>
+  <a class="btn" href="https://technoalex1.github.io/inventariosta1/index.html">Volver al Inicio</a>
+</div>
+
+</div>
+
+<footer>
+  <p>© 2026 InventariosTA — Hecho en Guatemala 🇬🇹 por <strong>TechnoAlex</strong></p>
+  <img src="https://technoalex1.github.io/inventariosta1/FB_IMG_1768959474984.jpg" alt="TechnoAlex">      
+</footer>
+
+<div id="google_translate_element" style="display:none;"></div>
+
+<script>
+function toggleMenu(){
+  const m=document.getElementById('menu');
+  m.style.display = m.style.display==='block'?'none':'block';
+}
+
+function googleTranslateElementInit(){
+  new google.translate.TranslateElement({
+    pageLanguage:'es',
+    includedLanguages:'en,es,zh-CN,hi,pt,fr,de,it,ja,ko',
+    autoDisplay:false
+  }, 'google_translate_element');
+}
+
+function setLang(lang){
+  const s=document.querySelector('.goog-te-combo');
+  if(s){
+    s.value=lang;
+    s.dispatchEvent(new Event('change'));
+  }
+
+  const langTextDiv = document.getElementById('language-selector-text');
+  if(langTextDiv){
+    let text = "Elegir Idioma"; 
+    switch(lang){
+      case 'en': text = "Choose Language"; break;
+      case 'es': text = "Elegir Idioma"; break;
+      case 'zh-CN': text = "选择语言"; break;
+      case 'hi': text = "भाषा चुनें"; break;
+      case 'pt': text = "Escolher Idioma"; break;
+      case 'fr': text = "Choisir la Langue"; break;
+      case 'de': text = "Sprache wählen"; break;
+      case 'it': text = "Scegli Lingua"; break;
+      case 'ja': text = "言語を選択"; break;
+      case 'ko': text = "언어 선택"; break;
+    }
+    langTextDiv.textContent = text;
+  }
+}
+
+// Por defecto en español
+window.onload=()=>setTimeout(()=>setLang('es'),1200);
+</script>
+
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>       
+
+</body>
+</html>
