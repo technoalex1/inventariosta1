@@ -105,17 +105,17 @@ header h1{
 
 .section{margin-bottom:20px}
 
-/* VIDEO RESPONSIVO */
+/* VIDEO RESPONSIVO (VERTICAL 9:16) */
 .video-container {
   position: relative;
-  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  padding-bottom: 177.78%; /* 9:16 Aspect Ratio (Vertical) */
   height: 0;
   overflow: hidden;
-  max-width: 100%;
+  max-width: 400px; /* Limitamos ancho para que no sea excesivo */
+  margin: 0 auto 20px auto;
   background: #000;
   border-radius: 12px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-  margin-bottom: 20px;
 }
 
 .video-container iframe {
