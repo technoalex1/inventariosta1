@@ -221,18 +221,19 @@ body{top:0!important}
     ¿Tienes alguna idea para mejorar la app o extrañas alguna función? Escríbela aquí abajo y se enviará directamente a nuestro equipo.
   </p>
 
-  <form action="https://formspree.io/f/fanygqbg" method="POST" id="feedback-form">
+  <form action="https://formsubmit.co/creativeplanett@gmail.com" method="POST" id="feedback-form">
     
-    <input type="hidden" name="_to" value="creativeplanett@gmail.com">
-    <input type="hidden" name="_subject" value="Nueva Sugerencia de la App">
-
-    <div class="feedback-container">
-      <textarea name="opinion" id="user-opinion" placeholder="Cuéntanos qué herramienta extrañas o cómo podemos mejorar..." required></textarea>
-      <button type="submit">Enviar sugerencia directamente</button>
+    <input type="hidden" name="_subject" value="Nueva Sugerencia de la App 🚀">
+    <input type="hidden" name="_captcha" value="false"> <input type="hidden" name="_template" value="table"> <div class="feedback-container">
+      <textarea name="Mensaje de Sugerencia" id="user-opinion" placeholder="Cuéntanos qué herramienta extrañas o cómo podemos mejorar..." required></textarea>
+      <button type="submit" id="submit-btn">Enviar sugerencia directamente</button>
     </div>
     
-    <p id="success-message" style="display:none; color: #20bf6b; font-weight: bold; margin-top: 10px; text-align: center;">
-      ¡Gracias! Tu opinión ha sido enviada con éxito.
+    <p id="success-message" style="display:none; color: #20bf6b; font-weight: bold; margin-top: 15px; text-align: center; font-size: 14px;">
+      ✅ ¡Gracias! Tu opinión ha sido enviada con éxito.
+    </p>
+    <p id="error-message" style="display:none; color: #ff4757; font-weight: bold; margin-top: 15px; text-align: center; font-size: 14px;">
+      ❌ Hubo un problema al enviar. Por favor, inténtalo de nuevo.
     </p>
   </form>
 </div>
@@ -247,6 +248,7 @@ body{top:0!important}
     max-width: 550px;
     margin: 20px auto;
     border: 1px solid #eeeeee;
+    box-sizing: border-box;
   }
   .news-badge {
     background-color: #007bff;
@@ -258,6 +260,7 @@ body{top:0!important}
     font-size: 12px;
     margin-bottom: 12px;
     text-transform: uppercase;
+    letter-spacing: 0.5px;
   }
   .section h2 {
     margin: 0 0 10px 0;
@@ -280,9 +283,11 @@ body{top:0!important}
     box-sizing: border-box;
     font-size: 14px;
     font-family: inherit;
+    transition: border-color 0.3s, box-shadow 0.3s;
   }
   .feedback-container textarea:focus {
     border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
     outline: none;
   }
   .feedback-container button {
@@ -296,37 +301,53 @@ body{top:0!important}
     border-radius: 8px;
     cursor: pointer;
     width: 100%;
-    transition: background 0.2s;
+    transition: background 0.2s, opacity 0.2s;
   }
   .feedback-container button:hover {
     background-color: #26de81;
   }
+  .feedback-container button:disabled {
+    background-color: #a5b1c2;
+    cursor: not-allowed;
+  }
 </style>
 
 <script>
-  const form = document.getElementById('feedback-form');
-  const successMessage = document.getElementById('success-message');
-
-  form.addEventListener('submit', async function(e) {
+  document.getElementById('feedback-form').addEventListener('submit', async function(e) {
     e.preventDefault(); // Evita que la página se recargue por completo
     
-    const formData = new FormData(form);
+    const form = e.target;
+    const button = document.getElementById('submit-btn');
+    const successMsg = document.getElementById('success-message');
+    const errorMsg = document.getElementById('error-message');
     
-    // Enviamos los datos de forma invisible a Formspree
-    const response = await fetch(form.action, {
-      method: form.method,
-      body: formData,
-      headers: {
-        'Accept': 'application/json'
+    // Ocultamos mensajes previos y desactivamos el botón temporalmente
+    successMsg.style.display = 'none';
+    errorMsg.style.display = 'none';
+    button.disabled = true;
+    button.innerText = 'Enviando...';
+    
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: new FormData(form),
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+      
+      if (response.ok) {
+        form.reset(); // Limpia el recuadro de texto
+        successMsg.style.display = 'block'; // Muestra el texto verde de éxito
+      } else {
+        errorMsg.style.display = 'block'; // Muestra error si el servidor responde mal
       }
-    });
-
-    if (response.ok) {
-      form.reset(); // Limpia el recuadro
-      successMessage.style.display = 'block'; // Muestra mensaje de éxito
-      setTimeout(() => successMessage.style.display = 'none', 5000); // Lo oculta tras 5 segundos
-    } else {
-      alert('Hubo un problema al enviar. Inténtalo de nuevo.');
+    } catch (error) {
+      errorMsg.style.display = 'block'; // Muestra error si falla la conexión de red
+    } finally {
+      // Restauramos el botón a su estado original
+      button.disabled = false;
+      button.innerText = 'Enviar sugerencia directamente';
     }
   });
 </script>
