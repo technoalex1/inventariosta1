@@ -214,21 +214,29 @@ body{top:0!important}
 <div class="container">
 
 
-  <div class="section">
+<div class="section">
   <div class="news-badge">Sugerencia</div>
   <h2>📢 ¡Tu opinión cuenta! 💡</h2>
   <p class="instruction-text">
-    ¿Tienes alguna idea para mejorar la app o extrañas alguna función? Escríbela aquí abajo. Nos ayuda mucho a seguir creciendo contigo.
+    ¿Tienes alguna idea para mejorar la app o extrañas alguna función? Escríbela aquí abajo y se enviará directamente a nuestro equipo.
   </p>
 
-  <!-- --- FORMULARIO DE OPINIÓN --- -->
-  <div class="feedback-container">
-    <textarea id="user-opinion" placeholder="Cuéntanos qué herramienta extrañas o cómo podemos mejorar..."></textarea>
-    <button type="button" onclick="enviarSugerencia()">Enviar sugerencia por correo</button>
-  </div>
+  <form action="https://formspree.io/f/fanygqbg" method="POST" id="feedback-form">
+    
+    <input type="hidden" name="_to" value="creativeplanett@gmail.com">
+    <input type="hidden" name="_subject" value="Nueva Sugerencia de la App">
+
+    <div class="feedback-container">
+      <textarea name="opinion" id="user-opinion" placeholder="Cuéntanos qué herramienta extrañas o cómo podemos mejorar..." required></textarea>
+      <button type="submit">Enviar sugerencia directamente</button>
+    </div>
+    
+    <p id="success-message" style="display:none; color: #20bf6b; font-weight: bold; margin-top: 10px; text-align: center;">
+      ¡Gracias! Tu opinión ha sido enviada con éxito.
+    </p>
+  </form>
 </div>
 
-<!-- Estilos CSS -->
 <style>
   .section {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -241,7 +249,7 @@ body{top:0!important}
     border: 1px solid #eeeeee;
   }
   .news-badge {
-    background-color: #007bff; /* Color azul para destacar sugerencias */
+    background-color: #007bff;
     color: white;
     padding: 4px 10px;
     border-radius: 6px;
@@ -250,7 +258,6 @@ body{top:0!important}
     font-size: 12px;
     margin-bottom: 12px;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
   }
   .section h2 {
     margin: 0 0 10px 0;
@@ -263,8 +270,6 @@ body{top:0!important}
     line-height: 1.5;
     margin-bottom: 20px;
   }
-  
-  /* Caja de texto y botón */
   .feedback-container textarea {
     width: 100%;
     height: 120px;
@@ -275,16 +280,14 @@ body{top:0!important}
     box-sizing: border-box;
     font-size: 14px;
     font-family: inherit;
-    transition: border-color 0.3s, box-shadow 0.3s;
   }
   .feedback-container textarea:focus {
     border-color: #007bff;
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
     outline: none;
   }
   .feedback-container button {
     margin-top: 12px;
-    background-color: #20bf6b; /* Color verde de éxito/envío */
+    background-color: #20bf6b;
     color: white;
     border: none;
     padding: 12px 24px;
@@ -292,7 +295,7 @@ body{top:0!important}
     font-weight: bold;
     border-radius: 8px;
     cursor: pointer;
-    width: 100%; /* Ocupa todo el ancho en móviles para mejor UX */
+    width: 100%;
     transition: background 0.2s;
   }
   .feedback-container button:hover {
@@ -300,27 +303,33 @@ body{top:0!important}
   }
 </style>
 
-<!-- Lógica JavaScript -->
 <script>
-  function enviarSugerencia() {
-    const opinionText = document.getElementById('user-opinion').value.trim();
-    const emailDestino = "creativeplanett@gmail.com";
-    const asunto = "Sugerencia / Opinión de la App";
+  const form = document.getElementById('feedback-form');
+  const successMessage = document.getElementById('success-message');
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault(); // Evita que la página se recargue por completo
     
-    if (opinionText === "") {
-      alert("Por favor, escribe tu sugerencia antes de enviar.");
-      return;
+    const formData = new FormData(form);
+    
+    // Enviamos los datos de forma invisible a Formspree
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
+
+    if (response.ok) {
+      form.reset(); // Limpia el recuadro
+      successMessage.style.display = 'block'; // Muestra mensaje de éxito
+      setTimeout(() => successMessage.style.display = 'none', 5000); // Lo oculta tras 5 segundos
+    } else {
+      alert('Hubo un problema al enviar. Inténtalo de nuevo.');
     }
-    
-    // Codifica el texto para evitar problemas con saltos de línea o caracteres especiales
-    const cuerpoEmail = encodeURIComponent(opinionText);
-    
-    // Abre el gestor de correo nativo del dispositivo
-    window.location.href = `mailto:${emailDestino}?subject=${encodeURIComponent(asunto)}&body=${cuerpoEmail}`;
-  }
+  });
 </script>
-
-
 
   
 
