@@ -214,10 +214,118 @@ body{top:0!important}
 <div class="container">
 
 
+  <div class="section">
+  <div class="news-badge">Sugerencia</div>
+  <h2>📢 ¡Tu opinión cuenta! 💡</h2>
+  <p class="instruction-text">
+    ¿Tienes alguna idea para mejorar la app o extrañas alguna función? Escríbela aquí abajo. Nos ayuda mucho a seguir creciendo contigo.
+  </p>
+
+  <!-- --- FORMULARIO DE OPINIÓN --- -->
+  <div class="feedback-container">
+    <textarea id="user-opinion" placeholder="Cuéntanos qué herramienta extrañas o cómo podemos mejorar..."></textarea>
+    <button type="button" onclick="enviarSugerencia()">Enviar sugerencia por correo</button>
+  </div>
+</div>
+
+<!-- Estilos CSS -->
+<style>
+  .section {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 24px;
+    background: #fdfdfd;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    max-width: 550px;
+    margin: 20px auto;
+    border: 1px solid #eeeeee;
+  }
+  .news-badge {
+    background-color: #007bff; /* Color azul para destacar sugerencias */
+    color: white;
+    padding: 4px 10px;
+    border-radius: 6px;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 12px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .section h2 {
+    margin: 0 0 10px 0;
+    font-size: 20px;
+    color: #222;
+  }
+  .instruction-text {
+    color: #555;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  
+  /* Caja de texto y botón */
+  .feedback-container textarea {
+    width: 100%;
+    height: 120px;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    resize: none;
+    box-sizing: border-box;
+    font-size: 14px;
+    font-family: inherit;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  .feedback-container textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+    outline: none;
+  }
+  .feedback-container button {
+    margin-top: 12px;
+    background-color: #20bf6b; /* Color verde de éxito/envío */
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%; /* Ocupa todo el ancho en móviles para mejor UX */
+    transition: background 0.2s;
+  }
+  .feedback-container button:hover {
+    background-color: #26de81;
+  }
+</style>
+
+<!-- Lógica JavaScript -->
+<script>
+  function enviarSugerencia() {
+    const opinionText = document.getElementById('user-opinion').value.trim();
+    const emailDestino = "creativeplanett@gmail.com";
+    const asunto = "Sugerencia / Opinión de la App";
+    
+    if (opinionText === "") {
+      alert("Por favor, escribe tu sugerencia antes de enviar.");
+      return;
+    }
+    
+    // Codifica el texto para evitar problemas con saltos de línea o caracteres especiales
+    const cuerpoEmail = encodeURIComponent(opinionText);
+    
+    // Abre el gestor de correo nativo del dispositivo
+    window.location.href = `mailto:${emailDestino}?subject=${encodeURIComponent(asunto)}&body=${cuerpoEmail}`;
+  }
+</script>
+
+
+
+  
 
 
   <div class="section">
-<div class="news-badge">Nuevo</div>
 <h2> 📢 ¡Pásate a nuestra app sin perder tus datos! 🚀 </h2>
     <p>
       21/05/2026
